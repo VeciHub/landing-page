@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeciHub - Tu comunidad vecinal virtual</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f3e9;
+            color: #333;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color:#FDFAF6;
+            ;
+            padding: 15px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color:#67AE6E;
+            ;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #5caf7c;
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline {
+            border: 2px solid #5caf7c;
+            color: #333;
+            background: transparent;
+        }
+        
+        .btn-outline:hover {
+            background-color: #5caf7c;
+            color: white;
+        }
+        
+        .btn-filled {
+            background-color: #5caf7c;
+            color: white;
+            border: 2px solid #5caf7c;
+        }
+        
+        .btn-filled:hover {
+            background-color: #4a9a6a;
+            border-color: #4a9a6a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: url('AAA.png') no-repeat center center/cover;
+            background-size: cover;
+            background-position: center;
+            min-height: 500px;
+            color:#FAF1E6;
+            ;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        /* About aaa */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-section {
+            background-color: #90C67C;
+            ;
+            padding: 40px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .hero-content h2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+        
+        .hero-content h3 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 16px;
+            color: white;
+            line-height: 1.5;
+        }
+        
+        .hero-image {
+            width: 35%;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .features-section {
+            background-color: #328E6E;
+            padding: 40px;
+            margin-top: 2px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 29px;
+            position: relative;
+        }
+        
+        .section-title::before, .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            background-color: white;
+            width: 20%;
+        }
+        
+        .section-title::before {
+            left: 5%;
+        }
+        
+        .section-title::after {
+            right: 5%;
+        }
+        
+        .features-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            width: 30%;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .feature p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: white;
+        }
+
+        .icon-bell {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+        }
+        
+        .icon-chat {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+        }
+        
+        .icon-calendar {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f9f3e9;
+        }
+        
+        .about-card {
+            background-color: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: stretch;
+        }
+        
+        .about-text {
+            flex: 1;
+            padding: 40px;
+            background-color:#90C67C;
+            color: white;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-text ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .about-text li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .about-text li:before {
+            content: "+";
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .about-image {
+            flex: 1;
+            background-image: url('/api/placeholder/600/600');
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+        }
+        
+        /* Plans Section */
+        .plans {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .plans h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color:#328E6E;
+            ;
+        }
+        
+        .plans-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            color: #000000;
+            ;
+        }
+        
+        .plan-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .plan-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            text-align: left;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .plan-card.featured {
+            border-color: #5caf7c;
+            transform: scale(1.05);
+        }
+        
+        .plan-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .plan-subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .plan-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .plan-price span {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .plan-features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .plan-features li:before {
+            content: "✓";
+            color: #5caf7c;
+            font-weight: bold;
+        }
+        
+        .plan-button {
+            text-align: center;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #f9f3e9;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .testimonials-sidebar {
+            flex: 1;
+            background-color: #328E6E;
+            ;
+            ;
+            ;
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+        }
+        
+        .testimonials-sidebar h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonials-sidebar p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .testimonials-grid {
+            flex: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-title {
+            color: #5caf7c;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            align-items: stretch;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: #90C67C;
+            ;
+            padding: 40px;
+            border-radius: 20px;
+            color: white;
+        }
+        
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 5px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 0;
+        }
+        
+        .contact-heading {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #328E6E;
+            ;
+        }
+        
+        .contact-subheading {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #f9f3e9;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-logo img {
+            margin-bottom: 15px;
+            height: 40px;
+        }
+        
+        .footer-slogan {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .footer-contact {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .footer-links h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #5caf7c;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #666;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #5caf7c;
+        }
+        
+        .footer-newsletter {
+            flex: 1.5;
+            min-width: 300px;
+        }
+        
+        .footer-newsletter h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #5caf7c;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 25px 0 0 25px;
+            border: 1px solid #ddd;
+        }
+        
+        .newsletter-button {
+            background-color: #5caf7c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 0 25px 25px 0;
+            cursor: pointer;
+        }
+        
+        .newsletter-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .footer-divider {
+            height: 1px;
+            background-color: #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ddd;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #5caf7c;
+            color: white;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-container,
+            .testimonials-container,
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .plan-card.featured {
+                transform: none;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <img src="Logo.png" alt="VeciHub Logo"> VeciHub
+            </div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#sobre-vecihub">Sobre VeciHub</a>
+                <a href="#planes">Planes</a>
+                <a href="#testimonios">Testimonios</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="auth-buttons">
+                <button class="btn btn-outline">Iniciar Sesión</button>
+                <button class="btn btn-filled">Crear Cuenta</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tu comunidad vecinal virtual</h1>
+                <p>VeciHub es la red social que mejora la comunicación y colaboración en tu comunidad.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-filled">Empieza ahora</button>
+                    <a href="#ver-mas" class="btn btn-outline">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About aaa -->
+    <section class="about-section" id="ver-mas">
+    <section class="hero-section">
+        <div class="hero-content">
+            <h2>VeciHub:</h2>
+            <h3>Conecta, Colabora, Crece Junto a tu Comunidad</h3>
+            <p>VeciHub facilita la comunicación a través de chats dinámicos, pensados para delegar tareas y roles de forma eficiente. Además, ofrece un entorno participativo donde puedes realizar votaciones grupales y destacar mensajes importantes.</p>
+        </div>
+        <div class="image">
+            <img src="Casita.png" alt="Casa comunidad" />
+          </div>
+    </section>
+    
+    <section class="features-section">
+        <h2 class="section-title">Descubre lo que VeciHub tiene para ti</h2>
+        
+        <div class="features-container">
+            <div class="feature">
+                <div class="icon-bell"></div>
+                <h3>Notificaciones de tu comunidad</h3>
+                <p>Recibe notificaciones de eventos locales agendados por tus vecinos.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="icon-chat"></div>
+                <h3>Comunicación vecinal eficiente</h3>
+                <p>Comunícate de forma eficiente con tus vecinos a través de los foros y subforos.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="icon-calendar"></div>
+                <h3>Organiza y participa activamente</h3>
+                <p>Agenda eventos y ferias en el calendario de la comunidad. Además, envía propuestas al líder de tu comunidad de forma rápida.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="sobre-vecihub">
+        <div class="container">
+            <div class="about-card">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Sobre VeciHub</h2>
+                        <ul>
+                            <li>Cree y agende reuniones</li>
+                            <li>Realizar votaciones y formularios</li>
+                            <li>Fijar comunicados relevantes</li>
+                            <li>Guardar reportes de incidentes locales</li>
+                            <li>Botón de pánico</li>
+                            <li>Creación y asignación de cargos</li>
+                        </ul>
+                    </div>
+                    <img src="SobreVH.png" alt="VeciHub Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="plans" id="planes">
+        <div class="container">
+            <h2>Planes de pago</h2>
+            <p class="plans-subtitle">Elija el plan que más se adapte a sus necesidades</p>
+            <div class="plan-cards">
+                <div class="plan-card">
+                    <h3 class="plan-title">Básico</h3>
+                    <p class="plan-subtitle">Perfecto para comunidades pequeñas que quieren organizarse mejor.</p>
+                    <div class="plan-price">S/. 49.90 <span>/Mensual</span></div>
+                    <ul class="plan-features">
+                        <li>Ten hasta 30 miembros en la comunidad.</li>
+                        <li>Creación de foros y subforos.</li>
+                        <li>Programación de reuniones.</li>
+                        <li>Creación de votaciones.</li>
+                        <li>Reportar y gestionar emergencias actuales y pasadas.</li>
+                    </ul>
+                    <div class="plan-button">
+                        <button class="btn btn-outline">Aplicar</button>
+                    </div>
+                </div>
+                <div class="plan-card featured">
+                    <h3 class="plan-title">Premium</h3>
+                    <p class="plan-subtitle">Ideal para comunidades medianas con mayor organización.</p>
+                    <div class="plan-price">S/. 79.90 <span>/Mensual</span></div>
+                    <ul class="plan-features">
+                        <li>Ten hasta 100 miembros en la comunidad.</li>
+                        <li>Botón de pánico.</li>
+                        <li>Llamada a las autoridades.</li>
+                        <li>Estadística de votaciones.</li>
+                        <li>Formularios inteligentes.</li>
+                        <li>Acceso a modelos de informes personalizados.</li>
+                    </ul>
+                    <div class="plan-button">
+                        <button class="btn btn-filled">Aplicar</button>
+                    </div>
+                </div>
+                <div class="plan-card">
+                    <h3 class="plan-title">Profesional</h3>
+                    <p class="plan-subtitle">Pensado para comunidades grandes con necesidades complejas.</p>
+                    <div class="plan-price">S/. 99.90 <span>/Mensual</span></div>
+                    <ul class="plan-features">
+                        <li>Ten hasta 500 miembros en la comunidad.</li>
+                        <li>Estadística de votaciones.</li>
+                        <li>Formularios inteligentes.</li>
+                        <li>Análisis de reportes de incidentes.</li>
+                        <li>Botón de pánico y llamada a las autoridades locales.</li>
+                        <li>Acceso a modelos de informes personalizados.</li>
+                    </ul>
+                    <div class="plan-button">
+                        <button class="btn btn-outline">Aplicar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <section class="testimonials" id="testimonios">
+            <div class="container">
+            <div class="testimonials-container">
+            <div class="testimonials-sidebar">
+                <h2>Conectados con VeciHub</h2>
+                 <p>Historias reales de vecinos que ya mejoran su comunidad con VeciHub.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">
+                        <img src="P1.jpeg" alt="Avatar">
+                    </div>
+                    <div>
+                 <h4 class="title">Luis Gamarra</h4>
+                <h4 class="testimonial-title">Vecino activo</h4>
+                    </div>
+                     </div>
+                    <p>VeciHub es increíble. Los mensajes importantes siempre están visibles y no nos perdemos nada relevante. ¡Muy recomendable!</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">
+                                        <img src="P2.jpeg" alt="Avatar">
+                                    </div>
+                                    <div>
+                                        <h4 class="title">Maria Guerrero</h4>
+                                        <h4 class="testimonial-title">Presidenta de una Junta Vecinal</h4>
+                                    </div>
+                                </div>
+                                <p>VeciHub ha transformado nuestra comunicación y organización comunitaria. Las votaciones y formularios facilitan decisiones democráticas.</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">
+                                        <img src="P3.jpeg" alt="Avatar">
+                                    </div>
+                                    <div>
+                                        <h4 class="ttitle">Samuel Delgado</h4>
+                                        <h4 class="testimonial-title">Vecino activo</h4>
+                                    </div>
+                                </div>
+                                <p>La función para reportar incidentes locales nos hace sentir más seguros. VeciHub es esencial para nuestra comunidad.</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">
+                                        <img src="P4.jpeg" alt="Avatar">
+                                    </div>
+                                    <div>
+                                        <h4 class="title">Juan Carlos Florez</h4>
+                                        <h4 class="testimonial-title">Coordinador de reportes</h4>
+                                    </div>
+                                </div>
+                                <p>Los informes preestablecidos ahorran mucho tiempo. VeciHub ha hecho nuestra administración más eficiente y menos estresante.</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">
+                                        <img src="P5.jpeg" alt="Avatar">
+                                    </div>
+                                    <div>
+                                        <h4 class="title">Esther Falcon</h4>
+                                        <h4 class="testimonial-title">Coordinadora activa de eventos</h4>
+                                    </div>
+                                </div>
+                                <p>Organizar reuniones es muy sencillo con VeciHub. Todos están informados y participan activamente en los eventos.</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    <div class="testimonial-avatar">
+                                        <img src="P6.png" alt="Avatar">
+                                    </div>
+                                    <div>
+                                        <h4 class="title">María López</h4>
+                                        <h4 class="testimonial-title">Vecino activo</h4>
+                                    </div>
+                                </div>
+                                <p>Antes de usar VeciHub, no conocía a nadie de mi comunidad y siempre me preocupaba si pasaba algo en la zona y nadie avisaba. Desde que uso VeciHub estoy al tanto de todo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+         </section>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+                <div class="container">
+                    <div class="contact-container">
+                        <div class="contact-form">
+                            <h2>Déjanos tu mensaje</h2>
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="nombres">Nombres *</label>
+                                        <input type="text" id="nombres" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="apellidos">Apellidos *</label>
+                                        <input type="text" id="apellidos" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono *</label>
+                                    <input type="tel" id="telefono" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mensaje">Mensaje *</label>
+                                    <textarea id="mensaje" class="form-control" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-filled" style="width: 100%;">Enviar a VeciHub</button>
+                            </form>
+                        </div>
+                        <div class="contact-info">
+                            <h2 class="contact-heading">Tu comunidad necesita tu voz. ¡Escríbenos!</h2>
+                            <p class="contact-subheading">¿Tienes dudas o sugerencias? Estamos aquí para ayudarte.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+              
+
+<!-- Footer Section -->
+<footer>
+    <div class="container">
+        <div class="footer-content" style="display: flex; justify-content: space-between; padding: 30px 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
+            <div class="footer-column">
+                <div class="footer-logo" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <h3 style="color: #67AE6E; font-size: 1.5rem; margin-right: 10px;">VeciHub</h3>
+                    <img src="Logo.png" alt="VeciHub Logo" style="height: 30px;">
+                </div>
+                <p style="margin-bottom: 5px; font-size: 0.9rem;">Vecinos conectados,<br>comunidades fuertes.</p>
+                <div style="margin-top: 15px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <img src="Correo.png" alt="Email" style="width: 26px; margin-right: 10px;">
+                        <a href="mailto:soporte@vecihub.com" style="color: #333; text-decoration: none; font-size: 0.9rem;">soporte@vecihub.com</a>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <img src="Correo.png" alt="Email" style="width: 26px; margin-right: 10px;">
+                        <a href="mailto:contacto@vecihub.com" style="color: #333; text-decoration: none; font-size: 0.9rem;">contacto@vecihub.com</a>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <img src="Telefono.png" alt="Phone" style="width: 26px; margin-right: 10px;">
+                        <p style="margin: 0; font-size: 0.9rem;">+51 987 654 321</p>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <img src="Telefono.png" alt="Phone" style="width: 26px; margin-right: 10px;">
+                        <p style="margin: 0; font-size: 0.9rem;">(01) 234 5678</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 style="color: #328E6E; margin-bottom: 20px; font-size: 1.2rem;">Paginas</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="#inicio" style="color: #333; text-decoration: none;">Inicio</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#sobre-vecihub" style="color: #333; text-decoration: none;">Sobre Vecihub</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#planes" style="color: #333; text-decoration: none;">Planes</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#testimonios" style="color: #333; text-decoration: none;">Testimonios</a></li>
+                    <li><a href="#contacto" style="color: #333; text-decoration: none;">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 style="color: #328E6E; margin-bottom: 20px; font-size: 1.2rem;">Conéctate con VeciHub</h3>
+                <div class="newsletter-form" style="margin-bottom: 15px;">
+                    <input type="email" placeholder="Ingrese su email" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px; width: 65%;">
+                    <button style="background-color: #328E6E; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; margin-left: 5px;">Suscribirse</button>
+                </div>
+                <p style="font-size: 0.85rem; color: #666;">No te pierdas ninguna novedad, recibe las actualizaciones directamente en tu correo.</p>
+            </div>
+        </div>
+       
+        <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+            <p style="font-size: 0.85rem; color: #666;">© 2025 VeciHub. Todos los derechos reservados.</p>
+            <div class="social-links" style="display: flex; gap: 15px;">
+                <a href="#" style="color: #333;"><img src="FB.jpeg" alt="Facebook" style="width: 20px;"></a>
+                <a href="#" style="color: #333;"><img src="IG.jpeg" alt="Instagram" style="width: 20px;"></a>
+                <a href="#" style="color: #333;"><img src="Tw.png" alt="Twitter" style="width: 20px;"></a>
+                <a href="#" style="color: #333;"><img src="Ln.png" alt="LinkedIn" style="width: 20px;"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
