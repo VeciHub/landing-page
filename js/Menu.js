@@ -38,5 +38,5 @@ document.getElementById('incidenci').addEventListener('click', function () {
 
 window.onload = function () {
   // Al cargar la página, redirige automáticamente a la sección de Inicio
-  document.getElementById("content-frame").src = "inicio.html"; // o la ruta real del archivo
+  document.getElementById("content-frame").src = "Inicio.html"; // o la ruta real del archivo
 };
