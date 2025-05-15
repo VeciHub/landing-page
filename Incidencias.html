@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Incidencias</title>
+    <!-- Enlazamos el CSS -->
+    <link href="css/Incidencias.css" rel="stylesheet">
+    <!-- Enlazamos el archivo JS -->
+    <script src="js/Incidencias.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Reportar Incidencia</h3>
+        </div>
+        <div class="card-body">
+            <!-- Formulario para reportar incidencias -->
+            <form id="incidencia-form" action="#" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="titulo">Título de la Incidencia</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Ingrese un título breve" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción del Problema</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" rows="4" placeholder="Describa la incidencia o problema detalladamente..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría</label>
+                    <select class="form-control" id="categoria" name="categoria">
+                        <option value="daños">Daños a la propiedad</option>
+                        <option value="actividades_sospechosas">Actividades sospechosas</option>
+                        <option value="falta_de_servicios">Falta de servicios básicos</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="imagen">Subir Imágenes (opcional)</label>
+                    <input type="file" class="form-control-file" id="imagen" name="imagen" accept="image/*">
+                </div>
+
+                <button type="submit" class="btn btn-success">Reportar Incidencia</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and jQuery (optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
