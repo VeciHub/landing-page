@@ -1,0 +1,815 @@
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Contenedor principal */
+.contenedor_general {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+/* Efecto en la sección de bienvenida */
+.contenedor_bienvenido h1 {
+    text-align: center;
+    color: #5d5d5d;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+
+    animation: fadeInEffect 2s ease-in-out;
+}
+
+/* Animación de fade-in */
+@keyframes fadeInEffect {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Sección "Nuestra Historia" */
+.Contenedor_conocenos {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Contenedor_conocenos h1 {
+    font-size: 2.2rem;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+/* Contenedor horizontal para la historia y el video */
+.contenedor_horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap; /* Hace que en pantallas pequeñas el contenido se acomode verticalmente */
+}
+
+/* Estilo del texto de la historia */
+.contenedor_texto span {
+    display: block;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    max-width: 500px;
+    padding: 0 15px;
+}
+
+/* Contenedor de video */
+.CONTENEDOR_VIDEO {
+    max-width: 560px;
+    flex: 1;
+}
+
+iframe {
+    border: none;
+    border-radius: 12px;
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    .contenedor_bienvenido h1 {
+        font-size: 2rem;
+    }
+
+    .Contenedor_conocenos h1 {
+        font-size: 1.8rem;
+    }
+
+    .contenedor_texto span {
+        font-size: 1rem;
+    }
+
+    .contenedor_horizontal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .CONTENEDOR_VIDEO iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+/*ESTILOS FOTOS PARTNET*/
+
+/* Estilo para el contenedor general */
+.CONTENEDOR_CENTRO_PARTNERS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Estilo para el título */
+.CONTENEDOR_CENTRO_PARTNERS h1 {
+    font-size: 2.5rem;
+    color: #2980b9;
+    margin-bottom: 40px;
+}
+
+/* Estilo para el contenedor de las imágenes de Partners */
+.CONTENEDOR_PARTNERS_IMG {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas por fila */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo para hacer las imágenes más anchas que altas, y darles una apariencia de álbum */
+.CONTENEDOR_PARTNERS_IMG img {
+    width: 100%;
+    height: auto; /* Deja que la altura se ajuste automáticamente según el ancho */
+    max-height: 150px; /* Limita la altura máxima para que no se distorsionen demasiado */
+    object-fit: contain; /* Asegura que las imágenes se escalen sin distorsión */
+    border-radius: 10px;
+    
+    transition: transform 0.3s ease-in-out; /* Añadir transición para un efecto hover */
+}
+
+/* Efecto hover en las imágenes */
+.CONTENEDOR_PARTNERS_IMG img:hover {
+    transform: scale(1.05); /* Hace que la imagen crezca ligeramente al pasar el ratón */
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    .CONTENEDOR_PARTNERS_IMG {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Estilo para la sección de noticias */
+.contenedor-noticias {
+  background-color: #f4f4f4;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.noticias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tarjeta-noticia {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.tarjeta-noticia:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta-noticia img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.tarjeta-noticia h3 {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.tarjeta-noticia p {
+  font-size: 14px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.tarjeta-noticia a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.tarjeta-noticia a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Estilo para la sección servicios */
+.contenedor-principal {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.contenedor-grafico {
+  flex: 0 0 320px;
+}
+
+.contenedor-texto {
+  flex: 1;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilo para la dona */
+.grafico-dona {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.cuadrante {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.cuadrante:hover {
+  opacity: 0.8;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  background-color: #61b5d6;
+  border-top-left-radius: 100%;
+  
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  background-color: #3b99f7;
+  border-top-right-radius: 100%;
+  
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  background-color: #cadaeb;
+  border-bottom-left-radius: 100%;
+  
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  background-color: #91c2f3;
+  border-bottom-right-radius: 100%;
+}
+
+.centro { /* este es el espaciador enrealidad*/
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.espaciador { /* este es el centro enrealidad*/
+  position: absolute;
+  width: 140px;  /* Ajusta según el tamaño del contenedor */
+  height: 140px;
+  top: 80px;
+  left: 80px;
+  background-color: #929090;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+
+
+
+
+.texto-arco {
+  position: absolute;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 13px;
+  transform-origin: center;
+  pointer-events: none;
+  white-space: nowrap;
+  
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* mejora la lectura */
+}
+
+
+/* Ajustes por cuadrante (puedes cambiar top/left/rotate según tu gráfico) */
+
+.texto-itsm {
+  top: 60px;
+  left: 40px; 
+  transform: rotate(315deg);
+}
+
+.texto-esm {
+  top: 65px;
+  right: 20px;
+  transform: rotate(50deg);
+}
+
+.texto-clientes {
+  bottom: 60px;
+  right: 20px; 
+  transform: rotate(130deg);
+}
+
+.texto-teletrabajo {
+  bottom: 55px;
+  left: 30px;
+  transform: rotate(220deg);
+}
+
+
+
+
+
+/***/
+
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Contenedor principal */
+.contenedor_general {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+/* Efecto en la sección de bienvenida */
+.contenedor_bienvenido h1 {
+    text-align: center;
+    color: #5d5d5d;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 12px;
+
+    animation: fadeInEffect 2s ease-in-out;
+}
+
+/* Animación de fade-in */
+@keyframes fadeInEffect {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Sección "Nuestra Historia" */
+.Contenedor_conocenos {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.Contenedor_conocenos h1 {
+    font-size: 2.2rem;
+    color: #2980b9;
+    margin-bottom: 20px;
+}
+
+/* Contenedor horizontal para la historia y el video */
+.contenedor_horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap; /* Hace que en pantallas pequeñas el contenido se acomode verticalmente */
+}
+
+/* Estilo del texto de la historia */
+.contenedor_texto span {
+    display: block;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    max-width: 500px;
+    padding: 0 15px;
+}
+
+/* Contenedor de video */
+.CONTENEDOR_VIDEO {
+    max-width: 560px;
+    flex: 1;
+}
+
+iframe {
+    border: none;
+    border-radius: 12px;
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    .contenedor_bienvenido h1 {
+        font-size: 2rem;
+    }
+
+    .Contenedor_conocenos h1 {
+        font-size: 1.8rem;
+    }
+
+    .contenedor_texto span {
+        font-size: 1rem;
+    }
+
+    .contenedor_horizontal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .CONTENEDOR_VIDEO iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
+
+
+/*ESTILOS FOTOS PARTNET*/
+
+/* Estilo para el contenedor general */
+.CONTENEDOR_CENTRO_PARTNERS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Estilo para el título */
+.CONTENEDOR_CENTRO_PARTNERS h1 {
+    font-size: 2.5rem;
+    color: #2980b9;
+    margin-bottom: 40px;
+}
+
+/* Estilo para el contenedor de las imágenes de Partners */
+.CONTENEDOR_PARTNERS_IMG {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas por fila */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilo para hacer las imágenes más anchas que altas, y darles una apariencia de álbum */
+.CONTENEDOR_PARTNERS_IMG img {
+    width: 100%;
+    height: auto; /* Deja que la altura se ajuste automáticamente según el ancho */
+    max-height: 150px; /* Limita la altura máxima para que no se distorsionen demasiado */
+    object-fit: contain; /* Asegura que las imágenes se escalen sin distorsión */
+    border-radius: 10px;
+    
+    transition: transform 0.3s ease-in-out; /* Añadir transición para un efecto hover */
+}
+
+/* Efecto hover en las imágenes */
+.CONTENEDOR_PARTNERS_IMG img:hover {
+    transform: scale(1.05); /* Hace que la imagen crezca ligeramente al pasar el ratón */
+}
+
+/* Estilo para dispositivos móviles */
+@media (max-width: 768px) {
+    .CONTENEDOR_PARTNERS_IMG {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Estilo para la sección de noticias */
+.contenedor-noticias {
+  background-color: #f4f4f4;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.noticias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tarjeta-noticia {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.tarjeta-noticia:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta-noticia img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.tarjeta-noticia h3 {
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.tarjeta-noticia p {
+  font-size: 14px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.tarjeta-noticia a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.tarjeta-noticia a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Estilo para la sección servicios */
+.contenedor-principal {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.contenedor-grafico {
+  flex: 0 0 320px;
+}
+
+.contenedor-texto {
+  flex: 1;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilo para la dona */
+.grafico-dona {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.cuadrante {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.cuadrante:hover {
+  opacity: 0.8;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  background-color: #61b5d6;
+  border-top-left-radius: 100%;
+  
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  background-color: #3b99f7;
+  border-top-right-radius: 100%;
+  
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  background-color: #cadaeb;
+  border-bottom-left-radius: 100%;
+  
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  background-color: #91c2f3;
+  border-bottom-right-radius: 100%;
+}
+
+.centro { /* este es el espaciador enrealidad*/
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 20%;
+  left: 20%;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.espaciador { /* este es el centro enrealidad*/
+  position: absolute;
+  width: 140px;  /* Ajusta según el tamaño del contenedor */
+  height: 140px;
+  top: 80px;
+  left: 80px;
+  background-color: #929090;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+
+
+
+
+.texto-arco {
+  position: absolute;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  color: white;
+  font-size: 13px;
+  transform-origin: center;
+  pointer-events: none;
+  white-space: nowrap;
+  
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4); /* mejora la lectura */
+}
+
+
+/* Ajustes por cuadrante (puedes cambiar top/left/rotate según tu gráfico) */
+
+.texto-itsm {
+  top: 60px;
+  left: 40px; 
+  transform: rotate(315deg);
+}
+
+.texto-esm {
+  top: 65px;
+  right: 20px;
+  transform: rotate(50deg);
+}
+
+.texto-clientes {
+  bottom: 60px;
+  right: 20px; 
+  transform: rotate(130deg);
+}
+
+.texto-teletrabajo {
+  bottom: 55px;
+  left: 30px;
+  transform: rotate(220deg);
+}
+
+
+
+
+
+/***/
+
+#texto-itsm,
+#texto-esm,
+#texto-clientes,
+#texto-teletrabajo {
+  position: absolute;
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: white;
+  pointer-events: none;
+}
+
+#texto-itsm {
+  top: 20px;
+  left: 80px;
+  transform: rotate(-45deg);
+}
+
+#texto-esm {
+  top: 20px;
+  right: 80px;
+  transform: rotate(45deg);
+}
+
+#texto-clientes {
+  bottom: 20px;
+  right: 80px;
+  transform: rotate(135deg);
+}
+
+#texto-teletrabajo {
+  bottom: 20px;
+  left: 80px;
+  transform: rotate(-135deg);
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Cargar Axios desde un CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    body {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url(img/fotofondo.jpg) no-repeat center center fixed;
+      background-size: cover;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    .login-card {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card text-center">
+    <img src="img/Logo.png" alt="Logo 386" class="logo-img mb-4">
+    <form id="login-form" action="Menu.html" method="GET">
+  <div class="mb-3 text-start">
+    <label for="username" class="form-label">Usuario</label>
+    <input type="text" class="form-control" id="username" placeholder="Ingresa tu usuario" required>
+  </div>
+  <div class="mb-3 text-start">
+    <label for="password" class="form-label">Contraseña</label>
+    <div class="input-group">
+      <input type="password" class="form-control" id="password" placeholder="Tu contraseña" required>
+      <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+        👁
+      </button>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary w-50">Ingresar</button>
+</form>
+
+  </div>
+
+  <script src="js/Login.js"></script>
+</body>
+</html>

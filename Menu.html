@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MENU PRINCIPAL</title>
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/Menu.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="logo-details">
+      
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a id="inicio" href="#">
+          <i class='bi bi-speedometer2'></i>
+          <span class="links_name">Inicio</span>
+        </a>
+        <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+        <a href="#" id="perfil">
+          <i class='bi bi-person-fill-gear'></i>
+          <span class="links_name">Mi Perfil</span>
+        </a>
+        <span class="tooltip">Mi Perfil</span>
+      </li>
+      
+      <li>
+        <a href="#" id="contratos">
+          <i class='bi bi-file-earmark-fill'></i>
+          <span class="links_name">Contratos</span>
+        </a>
+        <span class="tooltip">Chat</span>
+      </li>
+      <li>
+        <a href="#" id="incidenci">
+          <i class='bi bi-exclamation-triangle-fill'></i> <!-- Cambiado a un icono de alerta -->
+          <span class="links_name">Generar Incidencias</span>
+        </a>
+        <span class="tooltip">Generar Incidencias</span>
+      </li>
+      <li class="profile">
+        <div class="profile-details">
+          <div class="name_job">
+            <div class="name">Sebastian Eduardo</div>
+            <div class="job">Servicios TI</div>
+          </div>
+        </div>
+        <i class='bx bx-log-out' id="log_out"></i>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content  QUITAR LOS COMENTARIOS BACKUP-->
+  <section class="home-section">
+    
+    
+    <!--iframe para cargar las páginas dentro de la misma página -->
+    <iframe id="content-frame" src="" width="100%" height="100%" style="border: none;"></iframe>
+  </section>
+
+
+
+  <script src="js/Menu.js"></script>
+</body>
+</html>

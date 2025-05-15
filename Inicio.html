@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <title>Intranet Vecino - Comunidad</title>
+    <link href="css/Inicio.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #67AE6E; /* Verde */
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+        }
+
+        /* Cards Section */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            color: #67AE6E;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Specific card colors */
+        .notification-card {
+            background-color: #e0f7e9;
+        }
+
+        .news-card {
+            background-color: #f4f9f4;
+        }
+
+        .community-card {
+            background-color: #e8f5e9;
+        }
+
+        /* Noticias Section */
+        .contenedor-noticias {
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .noticias {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .tarjeta-noticia {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .tarjeta-noticia:hover {
+            transform: translateY(-5px);
+        }
+
+        .tarjeta-noticia img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .tarjeta-noticia h3 {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .tarjeta-noticia p {
+            font-size: 14px;
+            color: #444;
+            margin: 10px 0;
+        }
+
+        .tarjeta-noticia a {
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .tarjeta-noticia a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="contenedor_general">
+        <!-- Contenedor Bienvenida -->
+        <div class="contenedor_bienvenido">
+            <h1>BIENVENIDO SEBASTIAN EDUARDO</h1>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="cards-container">
+
+            <!-- Notificaciones Recientes -->
+            <div class="card notification-card">
+                <h3>Notificación de Seguridad</h3>
+                <p><strong>Alerta de seguridad:</strong> Se ha reportado una incidencia en tu zona. Revisa las últimas actualizaciones.</p>
+                <a href="#">Leer más...</a>
+            </div>
+
+            <div class="card notification-card">
+                <h3>Reunión Vecinal</h3>
+                <p><strong>Evento programado:</strong> Reunión de vecinos el próximo viernes a las 18:00 en el parque central.</p>
+                <a href="#">Ver detalles...</a>
+            </div>
+
+            <div class="card notification-card">
+                <h3>Votación Abierta</h3>
+                <p><strong>Votación:</strong> Participa en la votación para elegir el nuevo plan de mantenimiento.</p>
+                <a href="#">Votar aquí</a>
+            </div>
+
+        </div>
+
+<!-- Noticias Vecinales y Comunidad -->
+<div class="contenedor-noticias">
+            <h2 class="titulo">Noticias Vecinales y Comunidad</h2>
+            <div class="noticias">
+                <!-- Noticia 1 -->
+                <div class="tarjeta-noticia">
+                    <img alt="Audiencia vecinal en Barranco" src="https://elcomercio.pe/resizer/3c5I6q5X9gT2gFqZ5uFZ9eJ5q1A=/580x330/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/6X3A7X2QFZB5LJ3J3U5Y3D3X5A.jpg" />
+                    <h3>Vecinos de Barranco alertan sobre ruidos molestos e inseguridad</h3>
+                    <p>En una reciente audiencia vecinal, los habitantes de Barranco expresaron su preocupación por el aumento de ruidos molestos y la creciente inseguridad en su distrito. Autoridades locales se comprometieron a reforzar las medidas de seguridad.</p>
+                    <a href="https://elcomercio.pe/lima/barranco-audiencia-vecinal-en-barranco-vecinos-alertan-sobre-ruidos-molestos-inseguridad-y-servicios-comunitarios-jessica-vargas-audiencias-vecinales-el-comercio-noticias-noticia/" target="_blank">Leer más</a>
+                </div>
+
+                <!-- Noticia 2 -->
+                <div class="tarjeta-noticia">
+                    <img alt="Juntas vecinales marchan contra malas prácticas" src="https://larepublica.pe/resizer/3c5I6q5X9gT2gFqZ5uFZ9eJ5q1A=/580x330/smart/arc-anglerfish-arc2-prod-larepublica.s3.amazonaws.com/public/6X3A7X2QFZB5LJ3J3U5Y3D3X5A.jpg" />
+                    <h3>Juntas vecinales de Lima marchan contra malas prácticas de constructoras</h3>
+                    <p>Vecinos de diversos distritos de Lima organizaron una marcha para protestar contra las malas prácticas de algunas constructoras y el Ministerio de Vivienda. Exigen mayor transparencia y respeto por las comunidades afectadas por proyectos inmobiliarios.</p>
+                    <a href="https://larepublica.pe/sociedad/2024/05/13/juntas-vecinales-de-lima-marchan-contra-malas-practicas-de-constructoras-y-del-ministerio-de-vivienda-343161" target="_blank">Leer más</a>
+                </div>
+
+                <!-- Noticia 3 -->
+                <div class="tarjeta-noticia">
+                    <img alt="Vecinos piden mayor seguridad en el Cercado de Lima" src="https://rpp.pe/resizer/3c5I6q5X9gT2gFqZ5uFZ9eJ5q1A=/580x330/smart/arc-anglerfish-arc2-prod-rpp.s3.amazonaws.com/public/6X3A7X2QFZB5LJ3J3U5Y3D3X5A.jpg" />
+                    <h3>Vecinos del Cercado de Lima instalan rejas ante falta de seguridad</h3>
+                    <p>Ante la creciente inseguridad en el Cercado de Lima, los residentes han decidido instalar rejas de seguridad en sus viviendas debido a la falta de respuesta de las autoridades. Buscan protegerse de posibles robos y mejorar su sensación de seguridad.</p>
+                    <a href="https://rpp.pe/lima/policiales/cercado-de-lima-vecinos-piden-mayor-seguridad-tras-violento-asalto-que-sufrio-una-pareja-noticia-1623358" target="_blank">Leer más</a>
+                </div>
+        <!-- Mejorando la Convivencia Vecinal -->
+        <div class="contenedor-noticias">
+            <h2 class="titulo">Mejorando la Convivencia Vecinal</h2>
+            <div class="noticias">
+                <div class="tarjeta-noticia">
+                    <h3>Consejos para una convivencia armónica</h3>
+                    <p><strong>Consejo:</strong> Aprende cómo mejorar la comunicación en tu comunidad con estos sencillos pasos.</p>
+                    <a href="#">Leer más...</a>
+                </div>
+                <div class="tarjeta-noticia">
+                    <h3>Resolución de conflictos en la comunidad</h3>
+                    <p><strong>Guía:</strong> Estrategias para resolver conflictos de manera pacífica entre vecinos.</p>
+                    <a href="#">Ver detalles...</a>
+                </div>
+                <div class="tarjeta-noticia">
+                    <h3>Actividades comunitarias para fortalecer lazos</h3>
+                    <p><strong>Evento:</strong> Participa en nuestras actividades comunitarias para estrechar lazos con tus vecinos.</p>
+                    <a href="#">Ver más...</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            new CircleType(document.getElementById('texto-itsm')).radius(130);
+            new CircleType(document.getElementById('texto-esm')).radius(130);
+            new CircleType(document.getElementById('texto-clientes')).radius(130);
+            new CircleType(document.getElementById('texto-teletrabajo')).radius(130);
+        });
+    </script>
+</body>
+</html>
