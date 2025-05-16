@@ -194,7 +194,7 @@ select {
     <h1 id="register_title">Crear una cuenta</h1>
     <p class="login-link" id="register_subtitle">¿Ya tienes una cuenta? <a href="Login.html">Iniciar Sesión</a></p>
 
-    <form>
+    <form id="registroForm">
       <label for="nombre" id="register_label_name">¿Cómo te llamas?</label>
       <input type="text" id="nombre" placeholder="Nombre" required>
 
@@ -256,9 +256,39 @@ select {
       icon.classList.toggle("fa-eye");
       icon.classList.toggle("fa-eye-slash");
     });
+    //función para guardar el usuario en MockAPI
+    document.getElementById("registroForm").addEventListener("submit", function (e) {
+      e.preventDefault(); 
 
-    document.getElementById("register_button").addEventListener("click", () => {
-        window.location.href = "crearComunidad.html";
+      const data = {
+        nombre: document.getElementById("nombre").value,
+        cargo: document.getElementById("tipodeUsuario").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        direccion: document.getElementById("direccion").value
+      };
+
+      // URL de tu endpoint en MockAPI
+      fetch("https://68270fef397e48c913186ce3.mockapi.io/api/usuarios", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => {
+        if (!res.ok) throw new Error("Error al guardar");
+        return res.json();
+      })
+      .then(respuesta => {
+        console.log("Usuario registrado:", respuesta);
+        alert("¡Registro exitoso!");
+        window.location.href = "crearComunidad.html"; 
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("No se pudo registrar el usuario.");
+      });
     });
   </script>
 
