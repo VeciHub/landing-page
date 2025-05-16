@@ -89,3 +89,4 @@ searchInput.addEventListener("input", () => {
   document.querySelector('.filter-btn[data-filter="Todos"]').classList.add('active');
 });
 
+

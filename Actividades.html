@@ -1,23 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comunidad La Sagrada Juventud de Miraflores</title>
-  <link rel="stylesheet" href="css/Actividades.css"/>
+  <link rel="stylesheet" href="css/Actividades.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-  <header>
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="img/Logo.png" alt="VeciHub Logo" class="logo-img">
+      <h1>VeciHub</h1>
+      <nav>
+        <a href="Inicio.html">Inicio</a>
+        <a href="#"   >Comunidad</a>
+        <a href="#" class="active" >Actividades</a>        
+        <a href="#" >Votaciones</a>
+        <a href="Incidencias.html">Alertas</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <img src="img/register.jpg" alt="Avatar" class="avatar-img">
+      <div>
+        <p class="user-name" id="nombreUsuarioNavbar">Usuario</p>
+        <p class="user-role">Miembro</p>
+      </div>
+      <i class="fa fa-bell bell-icon"></i>
+    </div>
+  </header>
+
+  <div class="main-container">
     <h1>Comunidad La Sagrada Juventud de Miraflores</h1>
 
-    <!-- Buscador, botones de tipo y botón Agregar -->
     <div class="search-filter-container">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="🔍 Buscar eventos..."
-        class="search-input"
-      />
+      <input type="text" id="searchInput" placeholder="🔍 Buscar eventos..." class="search-input" />
 
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="Todos">Todos</button>
@@ -30,12 +49,22 @@
     </div>
 
     <p class="subtitle">A continuación se muestran los eventos más próximos:</p>
-  </header>
 
-  <main id="eventContainer" class="card-container">
-    <!-- Las tarjetas de eventos se insertarán aquí desde JS -->
-  </main>
+    <main id="eventContainer" class="card-container">
+      <!-- Las tarjetas de eventos se insertarán aquí desde JS -->
+    </main>
+  </div>
 
   <script src="js/Actividades.js"></script>
+
+  <!-- Mostrar nombre del usuario desde localStorage -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nombre = localStorage.getItem("nombreUsuario");
+      if (nombre) {
+        document.getElementById("nombreUsuarioNavbar").textContent = nombre;
+      }
+    });
+  </script>
 </body>
 </html>

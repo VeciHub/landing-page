@@ -3,12 +3,86 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
     color: #333;
+    margin: 0px;
 }
+/*Navbar*/
+        .navbar {
+            background-color: #67AE6E;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            color: white;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo-img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+        }
+
+        .navbar-left h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 400;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        nav a.active {
+            background-color: #2e5e36;
+        }
+
+        nav a:hover {
+            background-color: #4e944f;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-name {
+            margin: 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .user-role {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .bell-icon {
+            font-size: 20px;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+        }
 
 .container {
-    margin-top: 50px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 10% auto;
 }
 
 .card {

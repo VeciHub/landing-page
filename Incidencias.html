@@ -10,7 +10,27 @@
     <script src="js/Incidencias.js" defer></script>
 </head>
 <body>
-
+<header class="navbar">
+    <div class="navbar-left">
+      <img src="img/Logo.png" alt="VeciHub Logo" class="logo-img">
+      <h1>VeciHub</h1>
+      <nav>
+        <a href="Inicio.html">Inicio</a>
+        <a href="#"   >Comunidad</a>
+        <a href="Actividades.html">Actividades</a>        
+        <a href="#" >Votaciones</a>
+        <a href="#" class="active" >Alertas</a>
+      </nav>
+    </div>
+    <div class="navbar-right">
+      <img src="img/register.jpg" alt="Avatar" class="avatar-img">
+      <div>
+        <p class="user-name" id="nombreUsuarioNavbar">Usuario</p>
+        <p class="user-role">Miembro</p>
+      </div>
+      <i class="fa fa-bell bell-icon"></i>
+    </div>
+  </header>
 <div class="container">
     <div class="card">
         <div class="card-header">
@@ -55,6 +75,13 @@
 <!-- Bootstrap JS and jQuery (optional) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const nombre = localStorage.getItem("nombreUsuario");
+        if (nombre) {
+            document.getElementById("nombreUsuarioNavbar").textContent = nombre;
+        }
+    });
+</script>
 </body>
 </html>

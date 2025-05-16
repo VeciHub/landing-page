@@ -41,6 +41,7 @@
 
         .logo-img {
             height: 50px;
+            filter: brightness(0) invert(1);
         }
 
         .navbar-left h1 {
@@ -97,7 +98,7 @@
             cursor: pointer;
         }
 
-/* Header Section */
+        /* Header Section */
         .header {
             background-color: #67AE6E;
             /* Verde */
@@ -233,9 +234,9 @@
             <nav>
                 <a href="#" class="active">Inicio</a>
                 <a href="#">Comunidad</a>
-                <a href="#">Actividades</a>
+                <a href="Actividades.html">Actividades</a>
                 <a href="#">Votaciones</a>
-                <a href="#">Alertas</a>
+                <a href="Incidencias.html">Alertas</a>
             </nav>
         </div>
         <div class="navbar-right">
@@ -347,6 +348,14 @@
             </div>
 
             <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const nombre = localStorage.getItem("nombreUsuario");
+                    if (nombre) {
+                        const nombreParts = nombre.trim().split(" ");
+                        const displayName = nombreParts.length > 1 ? nombreParts[0] + " " + nombreParts[1][0] + "." : nombre;
+                        document.getElementById("nombreUsuarioNavbar").textContent = displayName;
+                    }
+                });
                 document.addEventListener("DOMContentLoaded", () => {
                     const nombre = localStorage.getItem("nombreUsuario") || "Vecino";
                     document.getElementById("bienvenida").textContent = `BIENVENIDO ${nombre.toUpperCase()}`;
