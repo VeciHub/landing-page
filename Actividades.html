@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Comunidad La Sagrada Juventud de Miraflores</title>
+  <link rel="stylesheet" href="css/Actividades.css"/>
+</head>
+<body>
+  <header>
+    <h1>Comunidad La Sagrada Juventud de Miraflores</h1>
+
+    <!-- Buscador, botones de tipo y botón Agregar -->
+    <div class="search-filter-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Buscar eventos..."
+        class="search-input"
+      />
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="Todos">Todos</button>
+        <button class="filter-btn" data-filter="Evento">Eventos</button>
+        <button class="filter-btn" data-filter="Reunión">Reuniones</button>
+        <button class="filter-btn" data-filter="Feria">Ferias</button>
+      </div>
+
+      <button id="addEventBtn" class="add-event-btn">Agregar Evento</button>
+    </div>
+
+    <p class="subtitle">A continuación se muestran los eventos más próximos:</p>
+  </header>
+
+  <main id="eventContainer" class="card-container">
+    <!-- Las tarjetas de eventos se insertarán aquí desde JS -->
+  </main>
+
+  <script src="js/Actividades.js"></script>
+</body>
+</html>
