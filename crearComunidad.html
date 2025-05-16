@@ -236,8 +236,24 @@
         if (nombre) {
             document.getElementById("bienvenida").textContent = `¡Bien ${nombre}! Comencemos con la creación de tu comunidad vecinal. Recuerda que usted será el líder.`;
         }
+
+        // último ID de la API  + 1
+        fetch("https://68270fef397e48c913186ce3.mockapi.io/api/comunidad?sortBy=id&order=desc")
+            .then(res => res.json())
+            .then(comunidades => {
+                let nuevoId = 1;
+                if (comunidades.length > 0) {
+                    nuevoId = parseInt(comunidades[0].id) + 1;
+                }
+                document.getElementById("comunidad-id").textContent = "ID: " + nuevoId;
+            })
+            .catch(err => {
+                console.error("Error al obtener ID:", err);
+                document.getElementById("comunidad-id").textContent = "ID: 1";
+            });
     });
 
+// Crear comunidad al enviar el formulario
     document.getElementById("formComunidad").addEventListener("submit", function (e) {
         e.preventDefault();
 
@@ -260,22 +276,23 @@
             },
             body: JSON.stringify(data)
         })
-            .then(res => {
-                if (!res.ok) throw new Error("Error al guardar la comunidad");
-                return res.json();
-            })
-            .then(respuesta => {
-                const idComunidad = respuesta.id;
-                document.getElementById("comunidad-id").textContent = "ID: " + idComunidad;
-                alert("¡Comunidad creada exitosamente con ID: " + idComunidad + "!");
-                window.location.href = "Inicio.html";
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("No se pudo crear la comunidad.");
-            });
+        .then(res => {
+            if (!res.ok) throw new Error("Error al guardar la comunidad");
+            return res.json();
+        })
+        .then(respuesta => {
+            const idComunidad = respuesta.id;
+            document.getElementById("comunidad-id").textContent = "ID: " + idComunidad;
+            alert("¡Comunidad creada exitosamente con ID: " + idComunidad + "!");
+            window.location.href = "Inicio.html";
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("No se pudo crear la comunidad.");
+        });
     });
 </script>
+
 
 
 </body>
