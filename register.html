@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Crear una cuenta - VeciHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      padding-bottom: 0%;
+      height: 130px;
+      font-size: 40px;
+      
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .login-link {
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .login-link a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .password-note {
+      font-size: 12px;
+      margin-top: -15px;
+      margin-bottom: 20px;
+      color: #777;
+    }
+
+    .terms {
+      font-size: 12px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .terms a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #4CAF50;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+
+    .header-right img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+    .nav-image{
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+    }
+    button:hover {
+      background-color: #3e8e41;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #388e3c;
+    }
+
+    footer div:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 10px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img class="nav-image" src="img/Logo.png" alt="VeciHub Logo">
+      <h2 style="color: #4CAF50;">VeciHub</h2>
+    </div>
+    <div class="header-right">
+      <img src="img/register.jpg" alt="Foto de perfil" class="avatar" >
+    </div>
+  </header>
+
+  <main class="form-container">
+    <h1 id="register_title">Crear una cuenta</h1>
+    <p class="login-link" id="register_subtitle">¿Ya tienes una cuenta? <a href="Login.html">Iniciar Sesión</a></p>
+
+    <form>
+      <label for="nombre" id="register_label_name">¿Cómo te llamas?</label>
+      <input type="text" id="nombre" placeholder="Nombre" required>
+
+      <label for="email" id="register_label_email">¿Cuál es tu correo electrónico?</label>
+      <input type="email" id="email" placeholder="Correo electrónico" required>
+
+      <label for="password" id="register_label_password">Crear una contraseña</label>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <p class="password-note" id="register_password_note">Usa 8 o más caracteres que incluyan letras, números y símbolos</p>
+
+      <label for="direccion" id="register_label_address">¿Cuál es la dirección de tu domicilio?</label>
+      <input type="text" id="direccion" placeholder="Dirección" required>
+
+      <p class="terms" id="register_terms">
+        Al continuar, usted está de acuerdo con nuestros
+        <a href="#">Términos de uso</a> y <a href="#">Política de privacidad</a>.
+      </p>
+
+      <button type="submit" id="register_button">Crear una cuenta</button>
+    </form>
+  </main>
+
+  <footer>
+    <div id="footer_contact">Contacto</div>
+    <div id="footer_social">Redes Sociales</div>
+    <div id="footer_about">Conócenos</div>
+  </footer>
+
+</body>
+</html>
