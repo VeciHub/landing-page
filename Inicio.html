@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&amp;display=swap" rel="stylesheet" />
     <title>Intranet Vecino - Comunidad</title>
-    <link href="css/Inicio.css" rel="stylesheet"/>
+    <link href="css/Inicio.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
     <style>
         /* Global Styles */
@@ -22,9 +23,84 @@
             color: #333;
         }
 
-        /* Header Section */
+        /*Navbar*/
+        .navbar {
+            background-color: #67AE6E;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            color: white;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .logo-img {
+            height: 50px;
+        }
+
+        .navbar-left h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 400;
+            padding: 8px 12px;
+            border-radius: 6px;
+        }
+
+        nav a.active {
+            background-color: #2e5e36;
+        }
+
+        nav a:hover {
+            background-color: #4e944f;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-name {
+            margin: 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .user-role {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .bell-icon {
+            font-size: 20px;
+            color: white;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+/* Header Section */
         .header {
-            background-color: #67AE6E; /* Verde */
+            background-color: #67AE6E;
+            /* Verde */
             color: white;
             padding: 20px;
             display: flex;
@@ -112,7 +188,7 @@
             border-radius: 8px;
             padding: 20px;
             width: 300px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
         }
 
@@ -146,15 +222,36 @@
         .tarjeta-noticia a:hover {
             text-decoration: underline;
         }
-
     </style>
 </head>
+
 <body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="img/Logo.png" alt="VeciHub Logo" class="logo-img">
+            <h1>VeciHub</h1>
+            <nav>
+                <a href="#" class="active">Inicio</a>
+                <a href="#">Comunidad</a>
+                <a href="#">Actividades</a>
+                <a href="#">Votaciones</a>
+                <a href="#">Alertas</a>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <img src="img/register.jpg" alt="Avatar" class="avatar-img">
+            <div>
+                <p class="user-name" id="nombreUsuarioNavbar">Usuario</p>
+                <p class="user-role">Miembro</p>
+            </div>
+            <i class="fa fa-bell bell-icon"></i>
+        </div>
+    </header>
 
     <div class="contenedor_general">
         <!-- Contenedor para la Bienvenida al sitio -->
         <div class="contenedor_bienvenido">
-            <h1>BIENVENIDO SEBASTIAN EDUARDO</h1>
+            <h1 id="bienvenida">BIENVENIDO VECINO</h1>
         </div>
 
         <!-- Cards Section -->
@@ -163,13 +260,15 @@
             <!-- Notificaciones Recientes -->
             <div class="card notification-card">
                 <h3>Notificación de Seguridad</h3>
-                <p><strong>Alerta de seguridad:</strong> Se ha reportado una incidencia en tu zona. Revisa las últimas actualizaciones.</p>
+                <p><strong>Alerta de seguridad:</strong> Se ha reportado una incidencia en tu zona. Revisa las últimas
+                    actualizaciones.</p>
                 <a href="#">Leer más...</a>
             </div>
 
             <div class="card notification-card">
                 <h3>Reunión Vecinal</h3>
-                <p><strong>Evento programado:</strong> Reunión de vecinos el próximo viernes a las 18:00 en el parque central.</p>
+                <p><strong>Evento programado:</strong> Reunión de vecinos el próximo viernes a las 18:00 en el parque
+                    central.</p>
                 <a href="#">Ver detalles...</a>
             </div>
 
@@ -181,64 +280,84 @@
 
         </div>
 
-<!-- Noticias Vecinales y de Comunidad -->
-<div class="contenedor-noticias">
+        <!-- Noticias Vecinales y de Comunidad -->
+        <div class="contenedor-noticias">
             <h2 class="titulo">Noticias Vecinales y Comunidad</h2>
             <div class="noticias">
                 <!-- Noticia 1 -->
                 <div class="tarjeta-noticia">
-                    <img alt="Audiencia vecinal en Barranco" src="https://elcomercio.pe/resizer/3c5I6q5X9gT2gFqZ5uFZ9eJ5q1A=/580x330/smart/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/6X3A7X2QFZB5LJ3J3U5Y3D3X5A.jpg" />
+                    <img alt="Audiencia vecinal en Barranco"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0AI87X9HamMUT7vB_nlj96DcUob9UBLlCW6w2WCSafaEMTHYmmCRllRVYsjGxh1cx2GQ&usqp=CAU" />
                     <h3>Vecinos de Barranco alertan sobre ruidos molestos e inseguridad</h3>
-                    <p>En una reciente audiencia vecinal, los habitantes de Barranco expresaron su preocupación por el aumento de ruidos molestos y la creciente inseguridad en su distrito. Autoridades locales se comprometieron a reforzar las medidas de seguridad.</p>
-                    <a href="https://elcomercio.pe/lima/barranco-audiencia-vecinal-en-barranco-vecinos-alertan-sobre-ruidos-molestos-inseguridad-y-servicios-comunitarios-jessica-vargas-audiencias-vecinales-el-comercio-noticias-noticia/" target="_blank">Leer más</a>
+                    <p>En una reciente audiencia vecinal, los habitantes de Barranco expresaron su preocupación por el
+                        aumento de ruidos molestos y la creciente inseguridad en su distrito. Autoridades locales se
+                        comprometieron a reforzar las medidas de seguridad.</p>
+                    <a href="https://elcomercio.pe/lima/barranco-audiencia-vecinal-en-barranco-vecinos-alertan-sobre-ruidos-molestos-inseguridad-y-servicios-comunitarios-jessica-vargas-audiencias-vecinales-el-comercio-noticias-noticia/"
+                        target="_blank">Leer más</a>
                 </div>
 
                 <!-- Noticia 2 -->
                 <div class="tarjeta-noticia">
-                    <img alt="Juntas vecinales marchan contra malas prácticas" src="https://larepublica.pe/resizer/3c5I6q5X9gT2gFqZ5uFZ9eJ5q1A=/580x330/smart/arc-anglerfish-arc2-prod-larepublica.s3.amazonaws.com/public/6X3A7X2QFZB5LJ3J3U5Y3D3X5A.jpg" />
+                    <img alt="Juntas vecinales marchan contra malas prácticas"
+                        src="https://imgmedia.larepublica.pe/1200x630/larepublica/image/metadata-social-media/2024/05/13/h1681dj872-portada-2.jpg" />
                     <h3>Juntas vecinales de Lima marchan contra malas prácticas de constructoras</h3>
-                    <p>Vecinos de diversos distritos de Lima organizaron una marcha para protestar contra las malas prácticas de algunas constructoras y el Ministerio de Vivienda. Exigen mayor transparencia y respeto por las comunidades afectadas por proyectos inmobiliarios.</p>
-                    <a href="https://larepublica.pe/sociedad/2024/05/13/juntas-vecinales-de-lima-marchan-contra-malas-practicas-de-constructoras-y-del-ministerio-de-vivienda-343161" target="_blank">Leer más</a>
+                    <p>Vecinos de diversos distritos de Lima organizaron una marcha para protestar contra las malas
+                        prácticas de algunas constructoras y el Ministerio de Vivienda. Exigen mayor transparencia y
+                        respeto por las comunidades afectadas por proyectos inmobiliarios.</p>
+                    <a href="https://larepublica.pe/sociedad/2024/05/13/juntas-vecinales-de-lima-marchan-contra-malas-practicas-de-constructoras-y-del-ministerio-de-vivienda-343161"
+                        target="_blank">Leer más</a>
                 </div>
 
                 <!-- Noticia 3 -->
                 <div class="tarjeta-noticia">
-                    <img alt="Vecinos piden mayor seguridad en el Cercado de Lima" src="https://rpp.pe/resizer/3c5I6q5X9gT2gFqZ5uFZ9eJ5q1A=/580x330/smart/arc-anglerfish-arc2-prod-rpp.s3.amazonaws.com/public/6X3A7X2QFZB5LJ3J3U5Y3D3X5A.jpg" />
+                    <img alt="Vecinos piden mayor seguridad en el Cercado de Lima"
+                        src="https://elcomercio.pe/resizer/7aRz9tKRTm1_-lruZon-8H9c_0c=/1200x800/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/DHFDJIMLINDIXNXUQH7DED4LCI.jpg" />
                     <h3>Vecinos del Cercado de Lima instalan rejas ante falta de seguridad</h3>
-                    <p>Ante la creciente inseguridad en el Cercado de Lima, los residentes han decidido instalar rejas de seguridad en sus viviendas debido a la falta de respuesta de las autoridades. Buscan protegerse de posibles robos y mejorar su sensación de seguridad.</p>
-                    <a href="https://rpp.pe/lima/policiales/cercado-de-lima-vecinos-piden-mayor-seguridad-tras-violento-asalto-que-sufrio-una-pareja-noticia-1623358" target="_blank">Leer más</a>
+                    <p>Ante la creciente inseguridad en el Cercado de Lima, los residentes han decidido instalar rejas
+                        de seguridad en sus viviendas debido a la falta de respuesta de las autoridades. Buscan
+                        protegerse de posibles robos y mejorar su sensación de seguridad.</p>
+                    <a href="https://rpp.pe/lima/policiales/cercado-de-lima-vecinos-piden-mayor-seguridad-tras-violento-asalto-que-sufrio-una-pareja-noticia-1623358"
+                        target="_blank">Leer más</a>
                 </div>
-        <!-- Mejorando la Convivencia Vecinal -->
-        <div class="contenedor-noticias">
-            <h2 class="titulo">Mejorando la Convivencia Vecinal</h2>
-            <div class="noticias">
-                <div class="tarjeta-noticia">
-                    <h3>Consejos para una convivencia armónica</h3>
-                    <p><strong>Consejo:</strong> Aprende cómo mejorar la comunicación en tu comunidad con estos sencillos pasos.</p>
-                    <a href="#">Leer más...</a>
+                <!-- Mejorando la Convivencia Vecinal -->
+                <div class="contenedor-noticias">
+                    <h2 class="titulo">Mejorando la Convivencia Vecinal</h2>
+                    <div class="noticias">
+                        <div class="tarjeta-noticia">
+                            <h3>Consejos para una convivencia armónica</h3>
+                            <p><strong>Consejo:</strong> Aprende cómo mejorar la comunicación en tu comunidad con estos
+                                sencillos pasos.</p>
+                            <a href="#">Leer más...</a>
+                        </div>
+                        <div class="tarjeta-noticia">
+                            <h3>Resolución de conflictos en la comunidad</h3>
+                            <p><strong>Guía:</strong> Estrategias para resolver conflictos de manera pacífica entre
+                                vecinos.</p>
+                            <a href="#">Ver detalles...</a>
+                        </div>
+                        <div class="tarjeta-noticia">
+                            <h3>Actividades comunitarias para fortalecer lazos</h3>
+                            <p><strong>Evento:</strong> Participa en nuestras actividades comunitarias para estrechar
+                                lazos con tus vecinos.</p>
+                            <a href="#">Ver más...</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="tarjeta-noticia">
-                    <h3>Resolución de conflictos en la comunidad</h3>
-                    <p><strong>Guía:</strong> Estrategias para resolver conflictos de manera pacífica entre vecinos.</p>
-                    <a href="#">Ver detalles...</a>
-                </div>
-                <div class="tarjeta-noticia">
-                    <h3>Actividades comunitarias para fortalecer lazos</h3>
-                    <p><strong>Evento:</strong> Participa en nuestras actividades comunitarias para estrechar lazos con tus vecinos.</p>
-                    <a href="#">Ver más...</a>
-                </div>
+
             </div>
-        </div>
 
-    </div>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            new CircleType(document.getElementById('texto-itsm')).radius(130);
-            new CircleType(document.getElementById('texto-esm')).radius(130);
-            new CircleType(document.getElementById('texto-clientes')).radius(130);
-            new CircleType(document.getElementById('texto-teletrabajo')).radius(130);
-        });
-    </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const nombre = localStorage.getItem("nombreUsuario") || "Vecino";
+                    document.getElementById("bienvenida").textContent = `BIENVENIDO ${nombre.toUpperCase()}`;
+                });
+                window.addEventListener('DOMContentLoaded', () => {
+                    new CircleType(document.getElementById('texto-itsm')).radius(130);
+                    new CircleType(document.getElementById('texto-esm')).radius(130);
+                    new CircleType(document.getElementById('texto-clientes')).radius(130);
+                    new CircleType(document.getElementById('texto-teletrabajo')).radius(130);
+                });
+            </script>
 </body>
+
 </html>
