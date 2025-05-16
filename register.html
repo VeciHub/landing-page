@@ -154,6 +154,15 @@
       color: #555;
     }
 
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
     @media (max-width: 600px) {
       .form-container {
         padding: 10px;
@@ -188,6 +197,16 @@
     <form>
       <label for="nombre" id="register_label_name">¿Cómo te llamas?</label>
       <input type="text" id="nombre" placeholder="Nombre" required>
+
+      <label for="tipodeUsuario" id="register_label_name">¿Cuál es tu cargo en la comunidad?</label>
+      <select id="tipodeUsuario" required>
+        <option value="" disabled selected>Seleccione una opción</option>
+        <option value="presidente">Presidente</option>
+        <option value="vicepresidente">Vicepresidente</option>
+        <option value="secretario">Secretario</option>
+        <option value="tesorero">Tesorero</option>
+        <option value="miembro">Miembro</option>
+      </select>
 
       <label for="email" id="register_label_email">¿Cuál es tu correo electrónico?</label>
       <input type="email" id="email" placeholder="Correo electrónico" required>
@@ -236,6 +255,10 @@
       passwordInput.setAttribute("type", type);
       icon.classList.toggle("fa-eye");
       icon.classList.toggle("fa-eye-slash");
+    });
+
+    document.getElementById("register_button").addEventListener("click", () => {
+        window.location.href = "crearComunidad.html";
     });
   </script>
 

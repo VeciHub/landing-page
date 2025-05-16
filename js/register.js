@@ -26,3 +26,10 @@ function validatePassword(password) {
     const hasSymbol = /[^a-zA-Z0-9]/.test(password);
     return minLength && hasLetter && hasNumber && hasSymbol;
 }
+
+document.querySelector("form").addEventListener("submit", function (e) {
+  const nombre = document.getElementById("nombre").value;
+  localStorage.setItem("nombreUsuario", nombre);
+  // redireccionar (si lo haces manualmente)
+  // window.location.href = "crear-comunidad.html";
+});
