@@ -1,263 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Crear Comunidad - VeciHub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>Crear Comunidad - VeciHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
 
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 40px;
-      font-size: 40px;
-    }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+            font-size: 40px;
+        }
 
-    .nav-image {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-    }
+        .nav-image {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
 
-    .welcome {
-      background-color: #fdf1e7;
-      color: #333;
-      padding: 15px 20px;
-      border-radius: 10px;
-      font-size: 16px;
-      max-width: 400px;
-    }
+        .welcome {
+            background-color: #fdf1e7;
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            max-width: 400px;
+        }
 
-    .form-box {
-      margin: 40px auto;
-      max-width: 1000px;
-      border: 1px solid #4CAF50;
-      border-radius: 15px;
-      padding: 40px;
-    }
+        .form-box {
+            margin: 40px auto;
+            max-width: 1000px;
+            border: 1px solid #4CAF50;
+            border-radius: 15px;
+            padding: 40px;
+        }
 
-    form {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      align-items: center;
-    }
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: center;
+        }
 
-    label {
-      font-size: 14px;
-      margin-bottom: 5px;
-      display: block;
-    }
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
 
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #4CAF50;
-      border-radius: 8px;
-    }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 8px;
+        }
 
-    .textarea {
-      grid-column: span 3;
-    }
+        .textarea {
+            grid-column: span 3;
+        }
 
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #4CAF50;
-      border-radius: 8px;
-      resize: none;
-    }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 8px;
+            resize: none;
+        }
 
-    .img-box {
-      grid-column: 3;
-      text-align: center;
-      border: 1px solid #4CAF50;
-      border-radius: 8px;
-      padding: 30px;
-    }
+        .img-box {
+            grid-column: 3;
+            text-align: center;
+            border: 1px solid #4CAF50;
+            border-radius: 8px;
+            padding: 30px;
+        }
 
-    .img-box input {
-      display: none;
-    }
+        .img-box input {
+            display: none;
+        }
 
-    .img-box label {
-      cursor: pointer;
-      color: #555;
-      font-size: 14px;
-    }
+        .img-box label {
+            cursor: pointer;
+            color: #555;
+            font-size: 14px;
+        }
 
-    .community-id {
-      grid-column: 3;
-      text-align: right;
-      font-size: 14px;
-      padding-right: 5px;
-    }
+        .community-id {
+            grid-column: 3;
+            text-align: right;
+            font-size: 14px;
+            padding-right: 5px;
+        }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      gap: 30px;
-    }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 30px;
+        }
 
-    .btn {
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-    }
+        .btn {
+            padding: 12px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
 
-    .btn-primary {
-      background-color: #4CAF50;
-      color: white;
-    }
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+        }
 
-    .btn-secondary {
-      background-color: white;
-      color: #4CAF50;
-      border: 2px solid #4CAF50;
-    }
+        .btn-secondary {
+            background-color: white;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+        }
 
-    .btn:hover {
-      opacity: 0.9;
-    }
+        .btn:hover {
+            opacity: 0.9;
+        }
 
-    @media (max-width: 800px) {
-      form {
-        grid-template-columns: 1fr;
-      }
-      .img-box, .community-id {
-        grid-column: span 1;
-      }
-    }
-  </style>
+        @media (max-width: 800px) {
+            form {
+                grid-template-columns: 1fr;
+            }
+
+            .img-box,
+            .community-id {
+                grid-column: span 1;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="img/Logo.png" alt="VeciHub Logo" class="nav-image">
-      <h2 style="color: #4CAF50;">VeciHub</h2>
-    </div>
-    <div class="welcome">
-      ¡Bien Josep! Comencemos con la creación de tu comunidad vecinal. Recuerda que usted será el líder.
-    </div>
-  </header>
-
-  <div class="form-box">
-    <form>
-        <div>
-            <label for="comunidad">Nombre de la comunidad</label>
-            <input type="text" id="comunidad" placeholder="">
+    <header>
+        <div class="logo">
+            <img src="img/Logo.png" alt="VeciHub Logo" class="nav-image">
+            <h2 style="color: #4CAF50;">VeciHub</h2>
         </div>
-
-        <div>
-            <label for="codigo">Código de invitación</label>
-            <input type="text" id="codigo" placeholder="">
+        <div class="welcome" id="bienvenida">
+            <!-- Aquí se insertará el nombre -->
         </div>
+    </header>
 
-        <div class="community-id" id="comunidad-id">
-            ID: <!-- se llenará dinámicamente -->
-        </div>
+    <div class="form-box">
+        <form id="formComunidad">
+            <div>
+                <label for="comunidad">Nombre de la comunidad</label>
+                <input type="text" id="comunidad" placeholder="">
+            </div>
 
-        <div>
-            <label for="departamento">Departamento</label>
-            <input type="text" id="departamento">
-        </div>
+            <div>
+                <label for="codigo">Código de invitación</label>
+                <input type="text" id="codigo" placeholder="">
+            </div>
 
-        <div>
-            <label for="provincia">Provincia</label>
-            <input type="text" id="provincia">
-        </div>
+            <div class="community-id" id="comunidad-id">ID: </div>
 
-        <div>
-            <label for="distrito">Distrito</label>
-            <input type="text" id="distrito">
-        </div>
+            <div>
+                <label for="departamento">Departamento</label>
+                <input type="text" id="departamento">
+            </div>
 
-        <div>
-            <label for="subforo1">Nombre del Subforo 1</label>
-            <input type="text" id="subforo1">
-        </div>
+            <div>
+                <label for="provincia">Provincia</label>
+                <input type="text" id="provincia">
+            </div>
 
-        <div>
-            <label for="subforo2">Nombre del Subforo 2</label>
-            <input type="text" id="subforo2">
-        </div>
+            <div>
+                <label for="distrito">Distrito</label>
+                <input type="text" id="distrito">
+            </div>
 
-        <div>
-            <label for="subforo3">Nombre del Subforo 3</label>
-            <input type="text" id="subforo3">
-        </div>
+            <div>
+                <label for="subforo1">Nombre del Subforo 1</label>
+                <input type="text" id="subforo1">
+            </div>
 
-        <div class="textarea">
-            <label for="descripcion">Descripción</label>
-            <textarea id="descripcion" rows="2"></textarea>
-        </div>
+            <div>
+                <label for="subforo2">Nombre del Subforo 2</label>
+                <input type="text" id="subforo2">
+            </div>
 
-        <div class="img-box">
-            <label for="imagen"><i class="fa fa-upload"></i> Subir imagen</label>
-            <input type="file" id="imagen">
-        </div>
+            <div>
+                <label for="subforo3">Nombre del Subforo 3</label>
+                <input type="text" id="subforo3">
+            </div>
+
+            <div class="textarea">
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" rows="2"></textarea>
+            </div>
+
+            <div class="img-box">
+                <label for="imagen"><i class="fa fa-upload"></i> Subir imagen</label>
+                <input type="file" id="imagen">
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="btn btn-primary">Crear Comunidad</button>
+                <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+            </div>
         </form>
-
-        <div class="buttons">
-        <button class="btn btn-primary">Crear Comunidad</button>
-        <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
-        </div>
     </div>
 
 <script>
-    window.addEventListener("DOMContentLoaded", () => {
-        // Mostrar nombre desde localStorage
+    document.addEventListener("DOMContentLoaded", () => {
         const nombre = localStorage.getItem("nombreUsuario");
         if (nombre) {
-            document.querySelector(".welcome").innerHTML = `¡Bien ${nombre}! Comencemos con la creación de tu comunidad vecinal. Recuerda que usted será el líder.`;
+            document.getElementById("bienvenida").textContent = `¡Bien ${nombre}! Comencemos con la creación de tu comunidad vecinal. Recuerda que usted será el líder.`;
         }
-
-
-        const randomID = generateRandomID();
-        document.getElementById("comunidad-id").textContent = "ID: " + randomID;
-        localStorage.setItem("comunidadID", randomID);
     });
 
-    function generateRandomID() {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        let result = "";
-        for (let i = 0; i < 5; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return result;
-    }
+    document.getElementById("formComunidad").addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    document.getElementById("btnCancelar").addEventListener("click", () => {
-        localStorage.removeItem("nombreUsuario");
-        localStorage.removeItem("comunidadID");
-        window.location.href = "index.html";
+        const data = {
+            nombreComunidad: document.getElementById("comunidad").value,
+            codigoInvitacion: document.getElementById("codigo").value,
+            departamento: document.getElementById("departamento").value,
+            provincia: document.getElementById("provincia").value,
+            distrito: document.getElementById("distrito").value,
+            nombreSubforo1: document.getElementById("subforo1").value,
+            nombreSubforo2: document.getElementById("subforo2").value,
+            nombreSubforo3: document.getElementById("subforo3").value,
+            descripcion: document.getElementById("descripcion").value
+        };
+
+        fetch("https://68270fef397e48c913186ce3.mockapi.io/api/comunidad", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => {
+                if (!res.ok) throw new Error("Error al guardar la comunidad");
+                return res.json();
+            })
+            .then(respuesta => {
+                const idComunidad = respuesta.id;
+                document.getElementById("comunidad-id").textContent = "ID: " + idComunidad;
+                alert("¡Comunidad creada exitosamente con ID: " + idComunidad + "!");
+                window.location.href = "Inicio.html";
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("No se pudo crear la comunidad.");
+            });
     });
-
 </script>
 
+
 </body>
+
 </html>

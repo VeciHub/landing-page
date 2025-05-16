@@ -281,14 +281,17 @@ select {
         return res.json();
       })
       .then(respuesta => {
-        console.log("Usuario registrado:", respuesta);
+        // SE GUARDA EL NOMBRE DEL USUARIO REGISTRADO
+        localStorage.setItem("nombreUsuario", data.nombre);
+
         alert("¡Registro exitoso!");
-        window.location.href = "crearComunidad.html"; 
+        window.location.href = "crearComunidad.html";
       })
       .catch(error => {
         console.error("Error:", error);
         alert("No se pudo registrar el usuario.");
       });
+
     });
   </script>
 
