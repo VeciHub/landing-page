@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Unirme a una comunidad - VeciHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 60px;
+    }
+
+    .logo h1 {
+      font-size: 32px;
+      color: #4CAF50;
+    }
+
+    .mensaje {
+      background-color: #fdf1e7;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      max-width: 350px;
+    }
+
+    .form-box {
+      margin: 40px auto;
+      max-width: 600px;
+      border: 1px solid #4CAF50;
+      border-radius: 15px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    input {
+      width: 60%;
+      padding: 12px;
+      margin-bottom: 30px;
+      border: 1px solid #4CAF50;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: #67AE6E;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: white;
+      color: #4CAF50;
+      border: 2px solid #4CAF50;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background-color: #67AE6E;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="img/Logo.png" alt="VeciHub Logo">
+    <h1>VeciHub</h1>
+  </div>
+  <div class="mensaje" id="mensajeUsuario"></div>
+</header>
+
+<main>
+  <div class="form-box">
+    <form id="formUnirse">
+      <label for="comunidadId">ID de la comunidad</label>
+      <input type="text" id="comunidadId" placeholder="Ej. 1" required>
+
+      <label for="codigoInvitacion">Código de invitación</label>
+      <input type="text" id="codigoInvitacion" placeholder="Ej. vecihub12345" required>
+
+      <div class="botones">
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <button type="button" class="btn btn-secondary" onclick="location.href='validarComunidad.html'">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div>Contacto</div>
+  <div>Redes Sociales</div>
+  <div>Conócenos</div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nombre = localStorage.getItem("nombreUsuario") || "usuario";
+    document.getElementById("mensajeUsuario").textContent = `¡Bien ${nombre}! Completa este último paso para empezar esta nueva aventura.`;
+  });
+
+
+  document.getElementById("formUnirse").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const id = document.getElementById("comunidadId").value.trim();
+    const codigo = document.getElementById("codigoInvitacion").value.trim();
+
+    if (codigo !== "vecihub12345") {
+      alert("Código de invitación incorrecto.");
+      return;
+    }
+
+    fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/comunidad/${id}`)
+      .then(res => {
+        if (!res.ok) throw new Error("ID de comunidad no válido");
+        return res.json();
+      })
+      .then(data => {
+        alert("¡Ingreso exitoso a la comunidad!");
+        // Aquí podrías guardar en localStorage si deseas
+        // localStorage.setItem("comunidadID", id);
+        window.location.href = "Inicio.html";
+      })
+      .catch(err => {
+        console.error(err);
+        alert("No se encontró la comunidad con ese ID.");
+      });
+  });
+</script>
+
+</body>
+</html>

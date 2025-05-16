@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>VeciHub - Selección de Comunidad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 40px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .logo h1 {
+      font-size: 42px;
+      color: #4CAF50;
+    }
+
+    .mensaje-bienvenida {
+      background-color: #fdf1e7;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      max-width: 350px;
+    }
+
+    main {
+      text-align: center;
+      padding: 0px 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .opciones {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .opcion {
+      background-color: #67AE6E;
+      padding: 25px 40px;
+      border-radius: 15px;
+      text-align: center;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .opcion:hover {
+      transform: translateY(-5px);
+      background-color: #519a58;
+    }
+
+    .opcion.secundaria {
+      background-color: #2e7031;
+    }
+
+    .opcion p {
+      font-size: 18px;
+      margin:5px;
+      color: white;
+    }
+
+    footer {
+      background-color: #67AE6E;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+
+    footer div:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/Logo.png" alt="VeciHub Logo" />
+      <h1>VeciHub</h1>
+    </div>
+    <div class="mensaje-bienvenida" id="mensajeBienvenida">
+      <!-- Se insertará dinámicamente el nombre -->
+    </div>
+  </header>
+
+<main>
+    <h2>Perfecto</h2>
+    <p>Ya casi estás listo para empezar a usar VeciHub</p>
+
+    <div class="opciones">
+        <div>
+            <small>¿No tiene una comunidad aún?</small>
+            <div class="opcion" onclick="location.href='crearComunidad.html'">
+                <p>Crear Comunidad</p>
+                <i class="fa-solid fa-users"></i>
+            </div>
+        </div>
+
+        <div>
+            <small>¿Sabe el código de su comunidad?</small>
+            <div class="opcion secundaria" onclick="location.href='unirseComunidad.html'">
+                <p>Unirme a una comunidad</p>
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div>Contacto</div>
+    <div>Redes Sociales</div>
+    <div>Conócenos</div>
+</footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const nombre = localStorage.getItem("nombreUsuario") || "vecino";
+      document.getElementById("mensajeBienvenida").textContent = `¡Hola ${nombre}! Tu cuenta ya está casi creada. Sigue las instrucciones para terminar`;
+    });
+  </script>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -39,7 +39,7 @@
             gap: 10px;
         }
 
-
+        
         .welcome {
             background-color: #fdf1e7;
             color: #333;
@@ -225,7 +225,7 @@
 
             <div class="buttons">
                 <button type="submit" class="btn btn-primary">Crear Comunidad</button>
-                <button type="button" class="btn btn-secondary" id="btnCancelar">Cancelar</button>
+                <button type="button" class="btn btn-secondary" onclick="location.href='validarComunidad.html'">Cancelar</button>
             </div>
         </form>
     </div>
@@ -253,7 +253,7 @@
             });
     });
 
-// Crear comunidad al enviar el formulario
+     
     document.getElementById("formComunidad").addEventListener("submit", function (e) {
         e.preventDefault();
 
