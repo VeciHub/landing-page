@@ -36,6 +36,10 @@ document.getElementById('incidenci').addEventListener('click', function () {
   document.getElementById('content-frame').src = 'Incidencias.html'; // Carga Incidencias.html dentro del iframe
 });
 
+document.getElementById('actividades').addEventListener('click', function () {
+  document.getElementById('content-frame').src = 'Actividades.html'; // Carga Actividades.html dentro del iframe
+});
+
 window.onload = function () {
   // Al cargar la página, redirige automáticamente a la sección de Inicio
   document.getElementById("content-frame").src = "Inicio.html"; // o la ruta real del archivo
