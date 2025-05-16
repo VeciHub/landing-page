@@ -735,6 +735,30 @@
                 gap: 40px;
             }
         }
+
+        .language-switch {
+            margin-left: 1rem;
+            font-weight: bold;
+            font-family: sans-serif;
+            color: #333;
+            background: #f5f0e6;
+            border: 2px solid #5caf7c;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .language-switch .lang-option {
+            cursor: pointer;
+            padding: 0 4px;
+            transition: color 0.3s;
+        }
+
+        .language-switch .active {
+            color: #5caf7c;
+            text-decoration: underline;
+        }
     </style>
 </head>
 
@@ -745,15 +769,18 @@
                 <img src="img/Logo.png" alt="VeciHub Logo"> VeciHub
             </div>
             <div class="nav-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#sobre-vecihub">Sobre VeciHub</a>
-                <a href="#planes">Planes</a>
-                <a href="#testimonios">Testimonios</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#inicio" id="nav-home">Inicio</a>
+                <a href="#sobre-vecihub" id="nav-about">Sobre VeciHub</a>
+                <a href="#planes" id="nav-plans">Planes</a>
+                <a href="#testimonios" id="nav-testimonials">Testimonios</a>
+                <a href="#contacto" id="nav-contact">Contacto</a>
             </div>
             <div class="auth-buttons">
-                <a href="Login.html" class="btn btn-outline">Iniciar Sesión</a>
-                <a href="register.html" class="btn btn-filled">Crear Cuenta</a>
+                <a href="Login.html" class="btn btn-outline" id="nav-log-in">Iniciar Sesión</a>
+                <a href="register.html" class="btn btn-filled" id="nav-sign-up">Crear Cuenta</a>
+            </div>
+            <div class="language-switch">
+                <span id="lang-es" class="lang-option active">ES</span>/<span id="lang-en" class="lang-option">EN</span>
             </div>
         </div>
     </header>
@@ -762,11 +789,11 @@
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-content">
-                <h1>Tu comunidad vecinal virtual</h1>
-                <p>VeciHub es la red social que mejora la comunicación y colaboración en tu comunidad.</p>
+                <h1  id="hero_title">Tu comunidad vecinal virtual</h1>
+                <p  id="hero_subtitle">VeciHub es la red social que mejora la comunicación y colaboración en tu comunidad.</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-filled" style="border-color: #ddd;">Empieza ahora</button>
-                    <a href="#ver-mas" class="btn btn-outline" style="border-color: #338F6E;">Ver más</a>
+                    <button class="btn btn-filled" style="border-color: #ddd;" id="hero_cta1" >Empieza ahora</button>
+                    <a href="#ver-mas" class="btn btn-outline" style="border-color: #338F6E;" id="hero_cta2" >Ver más</a>
                 </div>
             </div>
         </div>
@@ -774,55 +801,66 @@
 
     <!-- About aaa -->
     <section class="about-section" id="ver-mas">
-    <section class="hero-section">
-        <div class="hero-content">
-            <h2>VeciHub:</h2>
-            <h3>Conecta, Colabora, Crece Junto a tu Comunidad</h3>
-            <p>VeciHub facilita la comunicación a través de chats dinámicos, pensados para delegar tareas y roles de forma eficiente. Además, ofrece un entorno participativo donde puedes realizar votaciones grupales y destacar mensajes importantes.</p>
-        </div>
-        <div class="image">
-            <img src="img/Casita.png" alt="Casa comunidad" />
-          </div>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2 id="about_title" >VeciHub:</h2>
+                <h3 id="about_subtitle" >Conecta, Colabora, Crece Junto a tu Comunidad</h3>
+                <p id="about_text" >
+                    VeciHub facilita la comunicación a través de chats dinámicos, pensados para delegar tareas y roles de forma eficiente. Además, ofrece un entorno participativo donde puedes realizar votaciones grupales y destacar mensajes importantes.
+                </p>
+            </div>
+            <div class="image">
+                <img src="img/Casita.png" alt="Casa comunidad" />
+            </div>
+        </section>
     </section>
+
     
     <section class="features-section">
-        <h2 class="section-title">Descubre lo que VeciHub tiene para ti</h2>
+        <h2 class="section-title" id="features_title" >Descubre lo que VeciHub tiene para ti</h2>
         
         <div class="features-container">
             <div class="feature">
                 <div class="icon-bell"></div>
-                <h3>Notificaciones de tu comunidad</h3>
-                <p>Recibe notificaciones de eventos locales agendados por tus vecinos.</p>
+                <h3 id="feature1_title" >Notificaciones de tu comunidad</h3>
+                <p id="feature1_text">
+                    Recibe notificaciones de eventos locales agendados por tus vecinos.
+                </p>
             </div>
-            
+
             <div class="feature">
                 <div class="icon-chat"></div>
-                <h3>Comunicación vecinal eficiente</h3>
-                <p>Comunícate de forma eficiente con tus vecinos a través de los foros y subforos.</p>
+                <h3 id="feature2_title">Comunicación vecinal eficiente</h3>
+                <p id="feature2_text" >
+                    Comunícate de forma eficiente con tus vecinos a través de los foros y subforos.
+                </p>
             </div>
-            
+
             <div class="feature">
                 <div class="icon-calendar"></div>
-                <h3>Organiza y participa activamente</h3>
-                <p>Agenda eventos y ferias en el calendario de la comunidad. Además, envía propuestas al líder de tu comunidad de forma rápida.</p>
+                <h3 id="feature3_title" >Organiza y participa activamente</h3>
+                <p id="feature3_text" >
+                    Agenda eventos y ferias en el calendario de la comunidad. Además, envía propuestas al líder de tu comunidad de forma rápida.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+
+    <!-- About2 Section -->
     <section class="about" id="sobre-vecihub">
         <div class="container">
             <div class="about-card">
                 <div class="about-content">
                     <div class="about-text">
-                        <h2>Sobre VeciHub</h2>
+                        <h2 id="about2_title">Sobre VeciHub</h2>
                         <ul>
-                            <li>Cree y agende reuniones</li>
-                            <li>Realizar votaciones y formularios</li>
-                            <li>Fijar comunicados relevantes</li>
-                            <li>Guardar reportes de incidentes locales</li>
-                            <li>Botón de pánico</li>
-                            <li>Creación y asignación de cargos</li>
+                            <li id="about2_item1">Cree y agende reuniones</li>
+                            <li id="about2_item2">Realizar votaciones y formularios</li>
+                            <li id="about2_item3">Fijar comunicados relevantes</li>
+                            <li id="about2_item4">Guardar reportes de incidentes locales</li>
+                            <li id="about2_item5">Botón de pánico</li>
+                            <li id="about2_item6">Creación y asignación de cargos</li>
                         </ul>
                     </div>
                     <img src="img/SobreVH.png" alt="VeciHub Logo">
@@ -834,252 +872,260 @@
     <!-- Plans Section -->
     <section class="plans" id="planes">
         <div class="container">
-            <h2>Planes de pago</h2>
-            <p class="plans-subtitle">Elija el plan que más se adapte a sus necesidades</p>
+            <h2 id="plans_title">Planes de pago</h2>
+            <p class="plans-subtitle" id="plans_subtitle">Elija el plan que más se adapte a sus necesidades</p>
+            
             <div class="plan-cards">
                 <div class="plan-card">
-                    <h3 class="plan-title">Básico</h3>
-                    <p class="plan-subtitle">Perfecto para comunidades pequeñas que quieren organizarse mejor.</p>
-                    <div class="plan-price">S/. 49.90 <span>/Mensual</span></div>
+                    <h3 class="plan-title" id="plan1_title">Básico</h3>
+                    <p class="plan-subtitle" id="plan1_subtitle">Perfecto para comunidades pequeñas que quieren organizarse mejor.</p>
+                    <div class="plan-price" id="plan1_price">S/. 49.90 <span id="plan1_price_period">/Mensual</span></div>
                     <ul class="plan-features">
-                        <li>Ten hasta 30 miembros en la comunidad.</li>
-                        <li>Creación de foros y subforos.</li>
-                        <li>Programación de reuniones.</li>
-                        <li>Creación de votaciones.</li>
-                        <li>Reportar y gestionar emergencias actuales y pasadas.</li>
+                        <li id="plan1_item1">Ten hasta 30 miembros en la comunidad.</li>
+                        <li id="plan1_item2">Creación de foros y subforos.</li>
+                        <li id="plan1_item3">Programación de reuniones.</li>
+                        <li id="plan1_item4">Creación de votaciones.</li>
+                        <li id="plan1_item5">Reportar y gestionar emergencias actuales y pasadas.</li>
                     </ul>
                     <div class="plan-button">
-                        <button class="btn btn-outline">Aplicar</button>
+                        <button class="btn btn-outline" id="plan1_button">Aplicar</button>
                     </div>
                 </div>
+
                 <div class="plan-card featured">
-                    <h3 class="plan-title">Premium</h3>
-                    <p class="plan-subtitle">Ideal para comunidades medianas con mayor organización.</p>
-                    <div class="plan-price">S/. 79.90 <span>/Mensual</span></div>
+                    <h3 class="plan-title" id="plan2_title">Premium</h3>
+                    <p class="plan-subtitle" id="plan2_subtitle">Ideal para comunidades medianas con mayor organización.</p>
+                    <div class="plan-price" id="plan2_price">S/. 79.90 <span id="plan2_price_period">/Mensual</span></div>
                     <ul class="plan-features">
-                        <li>Ten hasta 100 miembros en la comunidad.</li>
-                        <li>Botón de pánico.</li>
-                        <li>Llamada a las autoridades.</li>
-                        <li>Estadística de votaciones.</li>
-                        <li>Formularios inteligentes.</li>
-                        <li>Acceso a modelos de informes personalizados.</li>
+                        <li id="plan2_item1">Ten hasta 100 miembros en la comunidad.</li>
+                        <li id="plan2_item2">Botón de pánico.</li>
+                        <li id="plan2_item3">Llamada a las autoridades.</li>
+                        <li id="plan2_item4">Estadística de votaciones.</li>
+                        <li id="plan2_item5">Formularios inteligentes.</li>
+                        <li id="plan2_item6">Acceso a modelos de informes personalizados.</li>
                     </ul>
                     <div class="plan-button">
-                        <button class="btn btn-filled">Aplicar</button>
+                        <button class="btn btn-filled" id="plan2_button">Aplicar</button>
                     </div>
                 </div>
+
                 <div class="plan-card">
-                    <h3 class="plan-title">Profesional</h3>
-                    <p class="plan-subtitle">Pensado para comunidades grandes con necesidades complejas.</p>
-                    <div class="plan-price">S/. 99.90 <span>/Mensual</span></div>
+                    <h3 class="plan-title" id="plan3_title">Profesional</h3>
+                    <p class="plan-subtitle" id="plan3_subtitle">Pensado para comunidades grandes con necesidades complejas.</p>
+                    <div class="plan-price" id="plan3_price">S/. 99.90 <span id="plan3_price_period">/Mensual</span></div>
                     <ul class="plan-features">
-                        <li>Ten hasta 500 miembros en la comunidad.</li>
-                        <li>Estadística de votaciones.</li>
-                        <li>Formularios inteligentes.</li>
-                        <li>Análisis de reportes de incidentes.</li>
-                        <li>Botón de pánico y llamada a las autoridades locales.</li>
-                        <li>Acceso a modelos de informes personalizados.</li>
+                        <li id="plan3_item1">Ten hasta 500 miembros en la comunidad.</li>
+                        <li id="plan3_item2">Estadística de votaciones.</li>
+                        <li id="plan3_item3">Formularios inteligentes.</li>
+                        <li id="plan3_item4">Análisis de reportes de incidentes.</li>
+                        <li id="plan3_item5">Botón de pánico y llamada a las autoridades locales.</li>
+                        <li id="plan3_item6">Acceso a modelos de informes personalizados.</li>
                     </ul>
                     <div class="plan-button">
-                        <button class="btn btn-outline">Aplicar</button>
+                        <button class="btn btn-outline" id="plan3_button">Aplicar</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-  
+
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonios">
-        <section class="testimonials" id="testimonios">
+        <section class="testimonials">
             <div class="container">
-            <div class="testimonials-container">
-            <div class="testimonials-sidebar">
-                <h2>Conectados con VeciHub</h2>
-                 <p>Historias reales de vecinos que ya mejoran su comunidad con VeciHub.</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">
-                        <img src="img/P1.jpeg" alt="Avatar">
+                <div class="testimonials-container">
+                    <div class="testimonials-sidebar">
+                        <h2 id="testimonials_title">Conectados con VeciHub</h2>
+                        <p id="testimonials_description">Historias reales de vecinos que ya mejoran su comunidad con VeciHub.</p>
                     </div>
-                    <div>
-                 <h4 class="title">Luis Gamarra</h4>
-                <h4 class="testimonial-title">Vecino activo</h4>
-                    </div>
-                     </div>
-                    <p>VeciHub es increíble. Los mensajes importantes siempre están visibles y no nos perdemos nada relevante. ¡Muy recomendable!</p>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar">
-                                        <img src="img/P2.jpeg" alt="Avatar">
-                                    </div>
-                                    <div>
-                                        <h4 class="title">Maria Guerrero</h4>
-                                        <h4 class="testimonial-title">Presidenta de una Junta Vecinal</h4>
-                                    </div>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="img/P1.jpeg" alt="Avatar">
                                 </div>
-                                <p>VeciHub ha transformado nuestra comunicación y organización comunitaria. Las votaciones y formularios facilitan decisiones democráticas.</p>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar">
-                                        <img src="img/P3.jpeg" alt="Avatar">
-                                    </div>
-                                    <div>
-                                        <h4 class="ttitle">Samuel Delgado</h4>
-                                        <h4 class="testimonial-title">Vecino activo</h4>
-                                    </div>
+                                <div>
+                                    <h4 class="title" id="test1_name">Luis Gamarra</h4>
+                                    <h4 class="testimonial-title" id="test1_role">Vecino activo</h4>
                                 </div>
-                                <p>La función para reportar incidentes locales nos hace sentir más seguros. VeciHub es esencial para nuestra comunidad.</p>
                             </div>
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar">
-                                        <img src="img/P4.jpeg" alt="Avatar">
-                                    </div>
-                                    <div>
-                                        <h4 class="title">Juan Carlos Florez</h4>
-                                        <h4 class="testimonial-title">Coordinador de reportes</h4>
-                                    </div>
+                            <p id="test1_text">VeciHub es increíble. Los mensajes importantes siempre están visibles y no nos perdemos nada relevante. ¡Muy recomendable!</p>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="img/P2.jpeg" alt="Avatar">
                                 </div>
-                                <p>Los informes preestablecidos ahorran mucho tiempo. VeciHub ha hecho nuestra administración más eficiente y menos estresante.</p>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar">
-                                        <img src="img/P5.jpeg" alt="Avatar">
-                                    </div>
-                                    <div>
-                                        <h4 class="title">Esther Falcon</h4>
-                                        <h4 class="testimonial-title">Coordinadora activa de eventos</h4>
-                                    </div>
+                                <div>
+                                    <h4 class="title" id="test2_name">Maria Guerrero</h4>
+                                    <h4 class="testimonial-title" id="test2_role">Presidenta de una Junta Vecinal</h4>
                                 </div>
-                                <p>Organizar reuniones es muy sencillo con VeciHub. Todos están informados y participan activamente en los eventos.</p>
                             </div>
-                            <div class="testimonial-card">
-                                <div class="testimonial-header">
-                                    <div class="testimonial-avatar">
-                                        <img src="img/P6.png" alt="Avatar">
-                                    </div>
-                                    <div>
-                                        <h4 class="title">María López</h4>
-                                        <h4 class="testimonial-title">Vecino activo</h4>
-                                    </div>
+                            <p id="test2_text">VeciHub ha transformado nuestra comunicación y organización comunitaria. Las votaciones y formularios facilitan decisiones democráticas.</p>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="img/P3.jpeg" alt="Avatar">
                                 </div>
-                                <p>Antes de usar VeciHub, no conocía a nadie de mi comunidad y siempre me preocupaba si pasaba algo en la zona y nadie avisaba. Desde que uso VeciHub estoy al tanto de todo.</p>
+                                <div>
+                                    <h4 class="title" id="test3_name">Samuel Delgado</h4>
+                                    <h4 class="testimonial-title" id="test3_role">Vecino activo</h4>
+                                </div>
                             </div>
+                            <p id="test3_text">La función para reportar incidentes locales nos hace sentir más seguros. VeciHub es esencial para nuestra comunidad.</p>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="img/P4.jpeg" alt="Avatar">
+                                </div>
+                                <div>
+                                    <h4 class="title" id="test4_name">Juan Carlos Florez</h4>
+                                    <h4 class="testimonial-title" id="test4_role">Coordinador de reportes</h4>
+                                </div>
+                            </div>
+                            <p id="test4_text">Los informes preestablecidos ahorran mucho tiempo. VeciHub ha hecho nuestra administración más eficiente y menos estresante.</p>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="img/P5.jpeg" alt="Avatar">
+                                </div>
+                                <div>
+                                    <h4 class="title" id="test5_name">Esther Falcon</h4>
+                                    <h4 class="testimonial-title" id="test5_role">Coordinadora activa de eventos</h4>
+                                </div>
+                            </div>
+                            <p id="test5_text">Organizar reuniones es muy sencillo con VeciHub. Todos están informados y participan activamente en los eventos.</p>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="testimonial-header">
+                                <div class="testimonial-avatar">
+                                    <img src="img/P6.png" alt="Avatar">
+                                </div>
+                                <div>
+                                    <h4 class="title" id="test6_name">María López</h4>
+                                    <h4 class="testimonial-title" id="test6_role">Vecino activo</h4>
+                                </div>
+                            </div>
+                            <p id="test6_text">Antes de usar VeciHub, no conocía a nadie de mi comunidad y siempre me preocupaba si pasaba algo en la zona y nadie avisaba. Desde que uso VeciHub estoy al tanto de todo.</p>
                         </div>
                     </div>
                 </div>
-         </section>
+            </div>
+        </section>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contacto">
-                <div class="container">
-                    <div class="contact-container">
-                        <div class="contact-form">
-                            <h2>Déjanos tu mensaje</h2>
-                            <form>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="nombres">Nombres *</label>
-                                        <input type="text" id="nombres" class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="apellidos">Apellidos *</label>
-                                        <input type="text" id="apellidos" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email *</label>
-                                    <input type="email" id="email" class="form-control" placeholder="ejemplo@correo.com" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="telefono">Teléfono *</label>
-                                    <input type="tel" id="telefono" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="mensaje">Mensaje *</label>
-                                    <textarea id="mensaje" class="form-control" rows="5" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-filled" style="width: 100%;">Enviar a VeciHub</button>
-                            </form>
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2 id="contact_title">Déjanos tu mensaje</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombres" id="contact_label_nombres">Nombres *</label>
+                                <input type="text" id="nombres" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos" id="contact_label_apellidos">Apellidos *</label>
+                                <input type="text" id="apellidos" class="form-control" required>
+                            </div>
                         </div>
-                        <div class="contact-info">
-                            <h2 class="contact-heading">Tu comunidad necesita tu voz. ¡Escríbenos!</h2>
-                            <p class="contact-subheading">¿Tienes dudas o sugerencias? Estamos aquí para ayudarte.</p>
+                        <div class="form-group">
+                            <label for="email" id="contact_label_email">Email *</label>
+                            <input type="email" id="email" class="form-control" placeholder="ejemplo@correo.com" required>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="telefono" id="contact_label_telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje" id="contact_label_mensaje">Mensaje *</label>
+                            <textarea id="mensaje" class="form-control" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-filled" id="contact_button" style="width: 100%;">Enviar a VeciHub</button>
+                    </form>
                 </div>
-            </section>
-              
-
-<!-- Footer Section -->
-<footer>
-    <div class="container">
-        <div class="footer-content" style="display: flex; justify-content: space-between; padding: 30px 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
-            <div class="footer-column">
-                <div class="footer-logo" style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <h3 style="color: #67AE6E; font-size: 1.5rem; margin-right: 10px;">VeciHub</h3>
-                    <img src="img/Logo.png" alt="VeciHub Logo" style="height: 30px;">
+                <div class="contact-info">
+                    <h2 class="contact-heading" id="contact_info_title">Tu comunidad necesita tu voz. ¡Escríbenos!</h2>
+                    <p class="contact-subheading" id="contact_info_text">¿Tienes dudas o sugerencias? Estamos aquí para ayudarte.</p>
                 </div>
-                <p style="margin-bottom: 5px; font-size: 0.9rem;">Vecinos conectados,<br>comunidades fuertes.</p>
-                <div style="margin-top: 15px;">
-                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                        <img src="img/Correo.png" alt="Email" style="width: 26px; margin-right: 10px;">
-                        <a href="mailto:soporte@vecihub.com" style="color: #333; text-decoration: none; font-size: 0.9rem;">soporte@vecihub.com</a>
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                        <img src="img/Correo.png" alt="Email" style="width: 26px; margin-right: 10px;">
-                        <a href="mailto:contacto@vecihub.com" style="color: #333; text-decoration: none; font-size: 0.9rem;">contacto@vecihub.com</a>
-                    </div>
-                    <div style="display: flex; align-items: center; margin-bottom: 8px;">
-                        <img src="img/Telefono.png" alt="Phone" style="width: 26px; margin-right: 10px;">
-                        <p style="margin: 0; font-size: 0.9rem;">+51 987 654 321</p>
-                    </div>
-                    <div style="display: flex; align-items: center;">
-                        <img src="img/Telefono.png" alt="Phone" style="width: 26px; margin-right: 10px;">
-                        <p style="margin: 0; font-size: 0.9rem;">(01) 234 5678</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h3 style="color: #328E6E; margin-bottom: 20px; font-size: 1.2rem;">Paginas</h3>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 10px;"><a href="#inicio" style="color: #333; text-decoration: none;">Inicio</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#sobre-vecihub" style="color: #333; text-decoration: none;">Sobre Vecihub</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#planes" style="color: #333; text-decoration: none;">Planes</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#testimonios" style="color: #333; text-decoration: none;">Testimonios</a></li>
-                    <li><a href="#contacto" style="color: #333; text-decoration: none;">Contacto</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h3 style="color: #328E6E; margin-bottom: 20px; font-size: 1.2rem;">Conéctate con VeciHub</h3>
-                <div class="newsletter-form" style="margin-bottom: 15px;">
-                    <input type="email" placeholder="Ingrese su email" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px; width: 65%;">
-                    <button style="background-color: #328E6E; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; margin-left: 5px;">Suscribirse</button>
-                </div>
-                <p style="font-size: 0.85rem; color: #666;">No te pierdas ninguna novedad, recibe las actualizaciones directamente en tu correo.</p>
             </div>
         </div>
-       
-        <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
-            <p style="font-size: 0.85rem; color: #666;">© 2025 VeciHub. Todos los derechos reservados.</p>
-            <div class="social-links" style="display: flex; gap: 15px;">
-                <a href="#" style="color: #333;"><img src="img/FB.jpeg" alt="Facebook" style="width: 20px;"></a>
-                <a href="#" style="color: #333;"><img src="img/IG.jpeg" alt="Instagram" style="width: 20px;"></a>
-                <a href="#" style="color: #333;"><img src="img/Tw.png" alt="Twitter" style="width: 20px;"></a>
-                <a href="#" style="color: #333;"><img src="img/Ln.png" alt="LinkedIn" style="width: 20px;"></a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="display: flex; justify-content: space-between; padding: 30px 0; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
+                <div class="footer-column">
+                    <div class="footer-logo" style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <h3 id="footer_brand" style="color: #67AE6E; font-size: 1.5rem; margin-right: 10px;">VeciHub</h3>
+                        <img src="img/Logo.png" alt="VeciHub Logo" style="height: 30px;">
+                    </div>
+                    <p id="footer_slogan" style="margin-bottom: 5px; font-size: 0.9rem;">Vecinos conectados,<br>comunidades fuertes.</p>
+                    <div style="margin-top: 15px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <img src="img/Correo.png" alt="Email" style="width: 26px; margin-right: 10px;">
+                            <a href="mailto:soporte@vecihub.com" id="footer_email1" style="color: #333; text-decoration: none; font-size: 0.9rem;">soporte@vecihub.com</a>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <img src="img/Correo.png" alt="Email" style="width: 26px; margin-right: 10px;">
+                            <a href="mailto:contacto@vecihub.com" id="footer_email2" style="color: #333; text-decoration: none; font-size: 0.9rem;">contacto@vecihub.com</a>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 8px;">
+                            <img src="img/Telefono.png" alt="Phone" style="width: 26px; margin-right: 10px;">
+                            <p id="footer_phone1" style="margin: 0; font-size: 0.9rem;">+51 987 654 321</p>
+                        </div>
+                        <div style="display: flex; align-items: center;">
+                            <img src="img/Telefono.png" alt="Phone" style="width: 26px; margin-right: 10px;">
+                            <p id="footer_phone2" style="margin: 0; font-size: 0.9rem;">(01) 234 5678</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3 id="footer_pages_title" style="color: #328E6E; margin-bottom: 20px; font-size: 1.2rem;">Paginas</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;"><a id="footer_page_home" href="#inicio" style="color: #333; text-decoration: none;">Inicio</a></li>
+                        <li style="margin-bottom: 10px;"><a id="footer_page_about" href="#sobre-vecihub" style="color: #333; text-decoration: none;">Sobre Vecihub</a></li>
+                        <li style="margin-bottom: 10px;"><a id="footer_page_plans" href="#planes" style="color: #333; text-decoration: none;">Planes</a></li>
+                        <li style="margin-bottom: 10px;"><a id="footer_page_testimonials" href="#testimonios" style="color: #333; text-decoration: none;">Testimonios</a></li>
+                        <li><a id="footer_page_contact" href="#contacto" style="color: #333; text-decoration: none;">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 id="footer_newsletter_title" style="color: #328E6E; margin-bottom: 20px; font-size: 1.2rem;">Conéctate con VeciHub</h3>
+                    <div class="newsletter-form" style="margin-bottom: 15px;">
+                        <input type="email" id="footer_input_placeholder" placeholder="Ingrese su email" style="padding: 10px; border: 1px solid #ddd; border-radius: 4px; width: 65%;">
+                        <button id="footer_button_subscribe" style="background-color: #328E6E; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; margin-left: 5px;">Suscribirse</button>
+                    </div>
+                    <p id="footer_newsletter_text" style="font-size: 0.85rem; color: #666;">No te pierdas ninguna novedad, recibe las actualizaciones directamente en tu correo.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+                <p id="footer_rights" style="font-size: 0.85rem; color: #666;">© 2025 VeciHub. Todos los derechos reservados.</p>
+                <div class="social-links" style="display: flex; gap: 15px;">
+                    <a href="#"><img src="img/FB.jpeg" alt="Facebook" style="width: 20px;"></a>
+                    <a href="#"><img src="img/IG.jpeg" alt="Instagram" style="width: 20px;"></a>
+                    <a href="#"><img src="img/Tw.png" alt="Twitter" style="width: 20px;"></a>
+                    <a href="#"><img src="img/Ln.png" alt="LinkedIn" style="width: 20px;"></a>
+                </div>
             </div>
         </div>
-    </div>
+    </footer>
 
-    
-</footer>
 
- </body>   
+<script src="js/i18n.js"></script>
+</body>   
+</html>
