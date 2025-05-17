@@ -156,30 +156,30 @@
     e.preventDefault();
 
     const comunidadId = document.getElementById("comunidadId").value.trim();
-    const codigo = document.getElementById("codigoInvitacion").value.trim();
+    const codigoIngresado = document.getElementById("codigoInvitacion").value.trim();
     const idUsuario = localStorage.getItem("idUsuario");
 
     if (!idUsuario) {
       alert("No se encontró el usuario en sesión. Vuelve a iniciar sesión.");
       return;
     }
-
-    if (codigo !== "vecihub12345") {
-      alert("Código de invitación incorrecto.");
-      return;
-    }
-
-    // Verificar que exista la comunidad con ese ID
+    
     fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/comunidad/${comunidadId}`)
       .then(res => {
         if (!res.ok) throw new Error("ID de comunidad no válido");
         return res.json();
       })
       .then(comunidad => {
-        // Guardar el ID en localStorage
+        const codigoGuardado = comunidad.codigoInvitacion;
+
+        if (codigoIngresado !== codigoGuardado) {
+          alert("Código de invitación incorrecto.");
+          throw new Error("Código inválido");
+        }
+
         localStorage.setItem("comunidadID", comunidad.id);
 
-        // Actualizar el usuario con ese ID de comunidad
+        // Actualizar usuario con el ID de comunidad
         return fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/usuarios/${idUsuario}`, {
           method: "PUT",
           headers: {
@@ -198,10 +198,13 @@
       })
       .catch(err => {
         console.error(err);
-        alert("Ocurrió un error al unirte a la comunidad.");
+        if (err.message !== "Código inválido") {
+          alert("Ocurrió un error al unirte a la comunidad.");
+        }
       });
   });
 </script>
+
 
 
 </body>

@@ -235,7 +235,7 @@
                 <a href="#" class="active">Inicio</a>
                 <a href="comunidad0.html">Comunidad</a>
                 <a href="Actividades.html">Actividades</a>
-                <a href="#">Votaciones</a>
+                <a href="votaciones.html">Votaciones</a>
                 <a href="Incidencias.html">Alertas</a>
             </nav>
         </div>
@@ -244,8 +244,8 @@
                 style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
                 <img src="img/register.jpg" alt="Avatar" class="avatar-img" />
                 <div>
-                    <p class="user-name" id="nombreUsuarioNavbar">Laura G.</p>
-                    <p class="user-role" id="cargoUsuarioNavbar">Miembro</p>
+                    <p class="user-name" id="nombreUsuarioNavbar"> </p>
+                    <p class="user-role" id="cargoUsuarioNavbar"> </p>
                 </div>
             </a>
             <i class="fa fa-bell bell-icon"></i>
@@ -255,7 +255,7 @@
     <div class="contenedor_general">
         <!-- Contenedor para la Bienvenida al sitio -->
         <div class="contenedor_bienvenido">
-            <h1 id="bienvenida">BIENVENIDO VECINO</h1>
+            <h1 id="bienvenida">BIENVENIDO(A) </h1>
         </div>
 
         <!-- Cards Section -->
@@ -350,26 +350,43 @@
 
             </div>
 
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    const nombre = localStorage.getItem("nombreUsuario");
-                    if (nombre) {
-                        const nombreParts = nombre.trim().split(" ");
-                        const displayName = nombreParts.length > 1 ? nombreParts[0] + " " + nombreParts[1][0] + "." : nombre;
-                        document.getElementById("nombreUsuarioNavbar").textContent = displayName;
-                    }
-                });
-                document.addEventListener("DOMContentLoaded", () => {
-                    const nombre = localStorage.getItem("nombreUsuario") || "Vecino";
-                    document.getElementById("bienvenida").textContent = `BIENVENIDO ${nombre.toUpperCase()}`;
-                });
-                window.addEventListener('DOMContentLoaded', () => {
-                    new CircleType(document.getElementById('texto-itsm')).radius(130);
-                    new CircleType(document.getElementById('texto-esm')).radius(130);
-                    new CircleType(document.getElementById('texto-clientes')).radius(130);
-                    new CircleType(document.getElementById('texto-teletrabajo')).radius(130);
-                });
-            </script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const idUsuario = localStorage.getItem("idUsuario");
+
+        if (!idUsuario) {
+            console.error("No hay idUsuario en localStorage");
+            return;
+        }
+
+        fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/usuarios/${idUsuario}`)
+            .then(res => {
+                if (!res.ok) throw new Error("No se pudo obtener el usuario");
+                return res.json();
+            })
+            .then(usuario => {
+                // Mostrar nombre abreviado en la barra
+                const nombreParts = usuario.nombre.trim().split(" ");
+                const displayName = nombreParts.length > 1 ? nombreParts[0] + " " + nombreParts[1][0] + "." : usuario.nombre;
+                document.getElementById("nombreUsuarioNavbar").textContent = displayName;
+
+                // Mostrar el cargo
+                document.getElementById("cargoUsuarioNavbar").textContent = usuario.cargo;
+
+                // Mostrar mensaje de bienvenida
+                document.getElementById("bienvenida").textContent = `BIENVENIDO(A) ${usuario.nombre.toUpperCase()}`;
+            })
+            .catch(err => {
+                console.error("Error al obtener usuario:", err);
+            });
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+        new CircleType(document.getElementById('texto-itsm')).radius(130);
+        new CircleType(document.getElementById('texto-esm')).radius(130);
+        new CircleType(document.getElementById('texto-clientes')).radius(130);
+        new CircleType(document.getElementById('texto-teletrabajo')).radius(130);
+    });
+</script>
 </body>
 
 </html>

@@ -154,27 +154,61 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const comunidadID = localStorage.getItem("comunidadID");
+    const idUsuario = localStorage.getItem("idUsuario");
 
-    if (!comunidadID) {
+    // Cargar nombre de la comunidad
+    if (comunidadID) {
+      fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/comunidad/${comunidadID}`)
+        .then(response => {
+          if (!response.ok) throw new Error("Error al obtener la comunidad");
+          return response.json();
+        })
+        .then(data => {
+          const nombreComunidad = `Comunidad ${data.nombreComunidad}`;
+          const nombreElem = document.getElementById("nombreComunidad");
+          if (nombreElem) nombreElem.textContent = nombreComunidad;
+          localStorage.setItem("nombreComunidad", nombreComunidad);
+        })
+        .catch(error => {
+          console.error("Error al recuperar nombre de comunidad:", error);
+          const nombreElem = document.getElementById("nombreComunidad");
+          if (nombreElem) nombreElem.textContent = "Comunidad no disponible";
+        });
+    } else {
       console.warn("No se encontró un ID de comunidad en el localStorage.");
-      document.getElementById("nombreComunidad").textContent = "Comunidad desconocida";
-      return;
+      const nombreElem = document.getElementById("nombreComunidad");
+      if (nombreElem) nombreElem.textContent = "Comunidad desconocida";
     }
 
-    fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/comunidad/${comunidadID}`)
-      .then(response => {
-        if (!response.ok) throw new Error("Error al obtener la comunidad");
-        return response.json();
-      })
-      .then(data => {
-        document.getElementById("nombreComunidad").textContent =
-          `Comunidad ${data.nombreComunidad}`;
-      })
-      .catch(error => {
-        console.error("Error al recuperar nombre de comunidad:", error);
-        document.getElementById("nombreComunidad").textContent =
-          "Comunidad no disponible";
-      });
+    // Cargar datos del usuario (nombre y cargo)
+    if (idUsuario) {
+      fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/usuarios/${idUsuario}`)
+        .then(res => {
+          if (!res.ok) throw new Error("Error al obtener el usuario");
+          return res.json();
+        })
+        .then(usuario => {
+          const nombreParts = usuario.nombre.trim().split(" ");
+          const displayName = nombreParts.length > 1
+            ? `${nombreParts[0]} ${nombreParts[1][0]}.`
+            : usuario.nombre;
+
+          const nombreElem = document.getElementById("nombreUsuarioNavbar");
+          const cargoElem = document.getElementById("cargoUsuarioNavbar");
+
+          if (nombreElem) nombreElem.textContent = displayName;
+          if (cargoElem) cargoElem.textContent = usuario.cargo;
+
+          // Guardar también en localStorage por si se requiere en otra vista
+          localStorage.setItem("nombreUsuario", usuario.nombre);
+          localStorage.setItem("cargoUsuario", usuario.cargo);
+        })
+        .catch(error => {
+          console.error("Error al recuperar datos del usuario:", error);
+        });
+    } else {
+      console.warn("No se encontró un ID de usuario en el localStorage.");
+    }
   });
 </script>
 
@@ -189,7 +223,7 @@
         <a href="Inicio.html">Inicio</a>
         <a href="#" class="active">Comunidad</a>
         <a href="Actividades.html">Actividades</a>
-        <a href="#">Votaciones</a>
+        <a href="votaciones.html">Votaciones</a>
         <a href="Incidencias.html">Alertas</a>
       </nav>
     </div>
@@ -197,8 +231,8 @@
       <a href="Perfil.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
         <img src="img/register.jpg" alt="Avatar" class="avatar-img" />
         <div>
-          <p class="user-name" id="nombreUsuarioNavbar">Laura G.</p>
-          <p class="user-role" id="cargoUsuarioNavbar">Miembro</p>
+          <p class="user-name" id="nombreUsuarioNavbar"></p>
+          <p class="user-role" id="cargoUsuarioNavbar"></p>
         </div>
       </a>
       <i class="fa fa-bell bell-icon"></i>
@@ -233,22 +267,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Script para nombre y cargo -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const nombre = localStorage.getItem("nombreUsuario");
-      const cargo = localStorage.getItem("cargoUsuario");
-
-      if (nombre) {
-        document.getElementById("nombreUsuarioNavbar").textContent = nombre;
-      }
-      if (cargo) {
-        document.getElementById("cargoUsuarioNavbar").textContent = cargo;
-      }
-    });
-    
-  </script>
 
 </body>
 </html>

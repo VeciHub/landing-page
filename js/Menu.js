@@ -24,12 +24,12 @@ document.getElementById('perfil').addEventListener('click', function () {
   document.getElementById('content-frame').src = 'Perfil.html'; // Carga Perfil.html dentro del iframe
 });
 
-document.getElementById('informes').addEventListener('click', function () {
-  document.getElementById('content-frame').src = 'Informes.html'; // Carga Informes.html dentro del iframe
+document.getElementById('votaciones').addEventListener('click', function () {
+  document.getElementById('content-frame').src = 'votaciones.html'; // Carga Informes.html dentro del iframe
 });
 
-document.getElementById('contratos').addEventListener('click', function () {
-  document.getElementById('content-frame').src = 'Contratos.html'; // Carga Contratos.html dentro del iframe
+document.getElementById('comunidad').addEventListener('click', function () {
+  document.getElementById('content-frame').src = 'comunidad0.html'; // Carga Contratos.html dentro del iframe
 });
 
 document.getElementById('incidenci').addEventListener('click', function () {
@@ -41,6 +41,5 @@ document.getElementById('actividades').addEventListener('click', function () {
 });
 
 window.onload = function () {
-  // Al cargar la página, redirige automáticamente a la sección de Inicio
-  document.getElementById("content-frame").src = "Inicio.html"; // o la ruta real del archivo
+  document.getElementById("content-frame").src = "Inicio.html"; 
 };

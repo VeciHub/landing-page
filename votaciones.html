@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comunidad La Sagrada Juventud de Miraflores</title>
+    <link rel="stylesheet" href="css/Actividades.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .votacion-card {
+            background-color: #fdf4eb;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        .votacion-card-header {
+            background-color: #90C67C;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .votacion-bar {
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .votacion-bar-fill {
+            background-color: #bbb;
+            padding: 2px 0;
+        }
+
+        .votacion-footer {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .votacion-btn {
+            padding: 8px 12px;
+            border: 1px solid #67AE6E;
+            color: #333;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="img/Logo.png" alt="VeciHub Logo" class="logo-img">
+            <h1>VeciHub</h1>
+            <nav>
+                <a href="Inicio.html">Inicio</a>
+                <a href="comunidad0.html">Comunidad</a>
+                <a href="Actividades.html">Actividades</a>
+                <a href="#" class="active">Votaciones</a>
+                <a href="Incidencias.html">Alertas</a>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <a href="Perfil.html"
+                style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+                <img src="img/register.jpg" alt="Avatar" class="avatar-img" />
+                <div>
+                    <p class="user-name" id="nombreUsuarioNavbar"> </p>
+                    <p class="user-role" id="cargoUsuarioNavbar"> </p>
+                </div>
+            </a>
+            <i class="fa fa-bell bell-icon"></i>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <h1 id="nombreComunidad">Comunidad ...</h1>
+
+        <div class="search-filter-container">
+            <input type="text" id="searchInput" placeholder="🔍 Buscar votaciones..." class="search-input" />
+        </div>
+        <div style="text-align: center; padding: 20px;">
+            <button style="background-color: #67AE6E; color: white; padding: 10px 20px; border: none; border-radius: 6px;">
+                Añadir votación
+            </button>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 0 20px;">
+            <!-- Tarjeta de votación ejemplo -->
+            <div class="votacion-card">
+                <div class="votacion-card-header">Elección de nueva junta directiva</div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 40%"></div>
+                    </div>
+                    <small>Leila Ramos</small>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Sub Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 27%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div>
+                    <strong>Tesorero</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 13.5%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div class="votacion-footer">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <button class="votacion-btn">Más detalle</button>
+                </div>
+            </div>
+            <!-- Votacion 2 -->
+                <div class="votacion-card">
+                <div class="votacion-card-header">Elección de nueva junta directiva</div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 40%"></div>
+                    </div>
+                    <small>Leila Ramos</small>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Sub Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 27%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div>
+                    <strong>Tesorero</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 13.5%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div class="votacion-footer">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <button class="votacion-btn">Más detalle</button>
+                </div>
+            </div>
+            <!-- Votacion 3 -->
+                <div class="votacion-card">
+                <div class="votacion-card-header">Elección de nueva junta directiva</div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 40%"></div>
+                    </div>
+                    <small>Leila Ramos</small>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Sub Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 27%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div>
+                    <strong>Tesorero</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 13.5%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div class="votacion-footer">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <button class="votacion-btn">Más detalle</button>
+                </div>
+            </div>
+            <!-- Votacion 4 -->
+                <div class="votacion-card">
+                <div class="votacion-card-header">Elección de nueva junta directiva</div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 40%"></div>
+                    </div>
+                    <small>Leila Ramos</small>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Sub Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 27%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div>
+                    <strong>Tesorero</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 13.5%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div class="votacion-footer">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <button class="votacion-btn">Más detalle</button>
+                </div>
+            </div>
+            <!-- Votacion 5 -->
+                <div class="votacion-card">
+                <div class="votacion-card-header">Elección de nueva junta directiva</div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 40%"></div>
+                    </div>
+                    <small>Leila Ramos</small>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Sub Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 27%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div>
+                    <strong>Tesorero</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 13.5%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div class="votacion-footer">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <button class="votacion-btn">Más detalle</button>
+                </div>
+            </div>
+            <!-- Votacion 6 -->
+                <div class="votacion-card">
+                <div class="votacion-card-header">Elección de nueva junta directiva</div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 40%"></div>
+                    </div>
+                    <small>Leila Ramos</small>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>Sub Líder</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 27%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div>
+                    <strong>Tesorero</strong>
+                    <div class="votacion-bar">
+                        <div class="votacion-bar-fill" style="width: 13.5%"></div>
+                    </div>
+                    <small>Javier Ramos</small>
+                </div>
+                <div class="votacion-footer">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div style="text-align: center;">
+                    <button class="votacion-btn">Más detalle</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
