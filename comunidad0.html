@@ -151,6 +151,33 @@
     }
   </style>
 </head>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const comunidadID = localStorage.getItem("comunidadID");
+
+    if (!comunidadID) {
+      console.warn("No se encontró un ID de comunidad en el localStorage.");
+      document.getElementById("nombreComunidad").textContent = "Comunidad desconocida";
+      return;
+    }
+
+    fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/comunidad/${comunidadID}`)
+      .then(response => {
+        if (!response.ok) throw new Error("Error al obtener la comunidad");
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById("nombreComunidad").textContent =
+          `Comunidad ${data.nombreComunidad}`;
+      })
+      .catch(error => {
+        console.error("Error al recuperar nombre de comunidad:", error);
+        document.getElementById("nombreComunidad").textContent =
+          "Comunidad no disponible";
+      });
+  });
+</script>
+
 <body>
 
   <!-- NAVBAR -->
@@ -160,25 +187,27 @@
       <h1>VeciHub</h1>
       <nav>
         <a href="Inicio.html">Inicio</a>
-        <a href="Comunidad.html" class="active">Comunidad</a>
+        <a href="#" class="active">Comunidad</a>
         <a href="Actividades.html">Actividades</a>
         <a href="#">Votaciones</a>
-        <a href="#">Alertas</a>
+        <a href="Incidencias.html">Alertas</a>
       </nav>
     </div>
     <div class="navbar-right">
-      <img src="img/register.jpg" alt="Avatar" class="avatar-img" />
-      <div>
-        <p class="user-name" id="nombreUsuarioNavbar">Laura G.</p>
-        <p class="user-role" id="cargoUsuarioNavbar">Miembro</p>
-      </div>
+      <a href="Perfil.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+        <img src="img/register.jpg" alt="Avatar" class="avatar-img" />
+        <div>
+          <p class="user-name" id="nombreUsuarioNavbar">Laura G.</p>
+          <p class="user-role" id="cargoUsuarioNavbar">Miembro</p>
+        </div>
+      </a>
       <i class="fa fa-bell bell-icon"></i>
     </div>
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
   <div class="main-container">
-    <h2>Comunidad La sagrada Juventud de Miraflores</h2>
+    <h2 id="nombreComunidad">Comunidad ...</h2>
 
     <ul class="info-text">
       <li>35 Miembros</li>
@@ -218,6 +247,7 @@
         document.getElementById("cargoUsuarioNavbar").textContent = cargo;
       }
     });
+    
   </script>
 
 </body>

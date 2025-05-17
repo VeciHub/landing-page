@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Crear una cuenta - VeciHub</title>
@@ -154,14 +155,14 @@
       color: #555;
     }
 
-select {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-}
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
 
     @media (max-width: 600px) {
       .form-container {
@@ -176,6 +177,7 @@ select {
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -197,6 +199,13 @@ select {
     <form id="registroForm">
       <label for="nombre" id="register_label_name">¿Cómo te llamas?</label>
       <input type="text" id="nombre" placeholder="Nombre" required>
+
+      <label for="apellido">¿Cuál es tu apellido?</label>
+      <input type="text" id="apellido" placeholder="Apellido" required>
+
+      <label for="telefono">¿Cuál es tu número de teléfono?</label>
+      <input type="text" id="telefono" placeholder="Teléfono" required>
+
 
       <label for="tipodeUsuario" id="register_label_name">¿Cuál es tu cargo en la comunidad?</label>
       <select id="tipodeUsuario" required>
@@ -226,7 +235,8 @@ select {
           <i class="fas fa-eye"></i>
         </button>
       </div>
-      <p class="password-note" id="register_password_note">Usa 8 o más caracteres que incluyan letras, números y símbolos</p>
+      <p class="password-note" id="register_password_note">Usa 8 o más caracteres que incluyan letras, números y
+        símbolos</p>
 
       <label for="direccion" id="register_label_address">¿Cuál es la dirección de tu domicilio?</label>
       <input type="text" id="direccion" placeholder="Dirección" required>
@@ -258,10 +268,12 @@ select {
     });
     //función para guardar el usuario en MockAPI
     document.getElementById("registroForm").addEventListener("submit", function (e) {
-      e.preventDefault(); 
+      e.preventDefault();
 
       const data = {
         nombre: document.getElementById("nombre").value,
+        apellido: document.getElementById("apellido").value,
+        telefono: document.getElementById("telefono").value,
         cargo: document.getElementById("tipodeUsuario").value,
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
@@ -276,24 +288,27 @@ select {
         },
         body: JSON.stringify(data)
       })
-      .then(res => {
-        if (!res.ok) throw new Error("Error al guardar");
-        return res.json();
-      })
-      .then(respuesta => {
-        // SE GUARDA EL NOMBRE DEL USUARIO REGISTRADO
-        localStorage.setItem("nombreUsuario", data.nombre);
+        .then(res => {
+          if (!res.ok) throw new Error("Error al guardar");
+          return res.json();
+        })
+        .then(respuesta => {
+          // SE GUARDA EL NOMBRE DEL USUARIO REGISTRADO
+          localStorage.setItem("nombreUsuario", data.nombre);
+          localStorage.setItem("idUsuario", respuesta.id);
 
-        alert("¡Registro exitoso!");
-        window.location.href = "crearComunidad.html";
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("No se pudo registrar el usuario.");
-      });
+
+          alert("¡Registro exitoso!");
+          window.location.href = "validarComunidad.html";
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          alert("No se pudo registrar el usuario.");
+        });
 
     });
   </script>
 
 </body>
+
 </html>

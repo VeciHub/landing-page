@@ -152,35 +152,57 @@
     document.getElementById("mensajeUsuario").textContent = `¡Bien ${nombre}! Completa este último paso para empezar esta nueva aventura.`;
   });
 
-
   document.getElementById("formUnirse").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const id = document.getElementById("comunidadId").value.trim();
+    const comunidadId = document.getElementById("comunidadId").value.trim();
     const codigo = document.getElementById("codigoInvitacion").value.trim();
+    const idUsuario = localStorage.getItem("idUsuario");
+
+    if (!idUsuario) {
+      alert("No se encontró el usuario en sesión. Vuelve a iniciar sesión.");
+      return;
+    }
 
     if (codigo !== "vecihub12345") {
       alert("Código de invitación incorrecto.");
       return;
     }
 
-    fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/comunidad/${id}`)
+    // Verificar que exista la comunidad con ese ID
+    fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/comunidad/${comunidadId}`)
       .then(res => {
         if (!res.ok) throw new Error("ID de comunidad no válido");
         return res.json();
       })
-      .then(data => {
+      .then(comunidad => {
+        // Guardar el ID en localStorage
+        localStorage.setItem("comunidadID", comunidad.id);
+
+        // Actualizar el usuario con ese ID de comunidad
+        return fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/usuarios/${idUsuario}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ comunidadID: comunidad.id })
+        });
+      })
+      .then(res => {
+        if (!res.ok) throw new Error("No se pudo actualizar el usuario con el ID de comunidad");
+        return res.json();
+      })
+      .then(usuarioActualizado => {
         alert("¡Ingreso exitoso a la comunidad!");
-        // Aquí podrías guardar en localStorage si deseas
-        // localStorage.setItem("comunidadID", id);
-        window.location.href = "Inicio.html";
+        window.location.href = "Menu.html";
       })
       .catch(err => {
         console.error(err);
-        alert("No se encontró la comunidad con ese ID.");
+        alert("Ocurrió un error al unirte a la comunidad.");
       });
   });
 </script>
+
 
 </body>
 </html>

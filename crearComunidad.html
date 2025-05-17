@@ -39,7 +39,7 @@
             gap: 10px;
         }
 
-        
+
         .welcome {
             background-color: #fdf1e7;
             color: #333;
@@ -165,7 +165,7 @@
             <h2 style="color: #4CAF50;">VeciHub</h2>
         </div>
         <div class="welcome" id="bienvenida">
-            
+
         </div>
     </header>
 
@@ -225,7 +225,8 @@
 
             <div class="buttons">
                 <button type="submit" class="btn btn-primary">Crear Comunidad</button>
-                <button type="button" class="btn btn-secondary" onclick="location.href='validarComunidad.html'">Cancelar</button>
+                <button type="button" class="btn btn-secondary"
+                    onclick="location.href='validarComunidad.html'">Cancelar</button>
             </div>
         </form>
     </div>
@@ -233,11 +234,13 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const nombre = localStorage.getItem("nombreUsuario");
+        const idUsuario = localStorage.getItem("idUsuario");
+
         if (nombre) {
             document.getElementById("bienvenida").textContent = `¡Bien ${nombre}! Comencemos con la creación de tu comunidad vecinal. Recuerda que usted será el líder.`;
         }
 
-        // último ID de la API  + 1
+        // Obtener último ID de comunidad + 1
         fetch("https://68270fef397e48c913186ce3.mockapi.io/api/comunidad?sortBy=id&order=desc")
             .then(res => res.json())
             .then(comunidades => {
@@ -251,48 +254,71 @@
                 console.error("Error al obtener ID:", err);
                 document.getElementById("comunidad-id").textContent = "ID: 1";
             });
-    });
 
-     
-    document.getElementById("formComunidad").addEventListener("submit", function (e) {
-        e.preventDefault();
+        // Registrar comunidad
+        document.getElementById("formComunidad").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        const data = {
-            nombreComunidad: document.getElementById("comunidad").value,
-            codigoInvitacion: document.getElementById("codigo").value,
-            departamento: document.getElementById("departamento").value,
-            provincia: document.getElementById("provincia").value,
-            distrito: document.getElementById("distrito").value,
-            nombreSubforo1: document.getElementById("subforo1").value,
-            nombreSubforo2: document.getElementById("subforo2").value,
-            nombreSubforo3: document.getElementById("subforo3").value,
-            descripcion: document.getElementById("descripcion").value
-        };
+            const data = {
+                nombreComunidad: document.getElementById("comunidad").value,
+                codigoInvitacion: document.getElementById("codigo").value,
+                departamento: document.getElementById("departamento").value,
+                provincia: document.getElementById("provincia").value,
+                distrito: document.getElementById("distrito").value,
+                nombreSubforo1: document.getElementById("subforo1").value,
+                nombreSubforo2: document.getElementById("subforo2").value,
+                nombreSubforo3: document.getElementById("subforo3").value,
+                descripcion: document.getElementById("descripcion").value
+            };
 
-        fetch("https://68270fef397e48c913186ce3.mockapi.io/api/comunidad", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
-        })
-        .then(res => {
-            if (!res.ok) throw new Error("Error al guardar la comunidad");
-            return res.json();
-        })
-        .then(respuesta => {
-            const idComunidad = respuesta.id;
-            document.getElementById("comunidad-id").textContent = "ID: " + idComunidad;
-            alert("¡Comunidad creada exitosamente con ID: " + idComunidad + "!");
-            window.location.href = "Inicio.html";
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("No se pudo crear la comunidad.");
+            fetch("https://68270fef397e48c913186ce3.mockapi.io/api/comunidad", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error("Error al guardar la comunidad");
+                    return res.json();
+                })
+                .then(respuesta => {
+                    const idComunidad = respuesta.id;
+                    document.getElementById("comunidad-id").textContent = "ID: " + idComunidad;
+                    localStorage.setItem("comunidadID", idComunidad);
+                    alert("¡Comunidad creada exitosamente con ID: " + idComunidad + "!");
+
+                    // Actualizar usuario con el ID de la comunidad
+                    if (idUsuario) {
+                        fetch(`https://68270fef397e48c913186ce3.mockapi.io/api/usuarios/${idUsuario}`, {
+                            method: "PUT",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({ comunidadID: idComunidad }),
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                console.log("Usuario actualizado con comunidad:", data);
+                                window.location.href = "Inicio.html";
+                            })
+                            .catch(err => {
+                                console.error("Error al actualizar usuario:", err);
+                                alert("La comunidad fue creada, pero no se pudo vincular con tu perfil.");
+                                window.location.href = "Inicio.html";
+                            });
+                    } else {
+                        alert("Comunidad creada, pero no se encontró el usuario para vincular.");
+                        window.location.href = "Menu.html";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("No se pudo crear la comunidad.");
+                });
         });
     });
 </script>
-
 
 
 </body>
